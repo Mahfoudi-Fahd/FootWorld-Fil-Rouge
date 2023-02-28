@@ -26,10 +26,16 @@ body{
 
 }
 .img2{
-    width: 40%;
+    width: 30%;
     position: absolute;
-    right: 0;
+    right: 10%;
     top: 100%;
+}
+.award-img{
+    height: 60px;
+    background: #FDC400;
+    padding: 2%;
+    margin: 3%;
 }
 section{
     width: 100%;
