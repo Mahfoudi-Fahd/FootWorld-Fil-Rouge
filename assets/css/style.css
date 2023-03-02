@@ -1,4 +1,5 @@
 body{
+    margin-top: 1rem;
     background: #F6F4ED;
 }
 .navbar-brand{
@@ -18,18 +19,22 @@ body{
     font-weight:600;
     font-size: small;
 }
+.top-section{
+    margin-top: 2rem;
+}
 .img1{
-    width: 40%;
+    width: 52%;
     /* height: 50%; */
     position: absolute;
     right: 0;
 
 }
 .img2{
-    width: 30%;
+    z-index: -1;
+    width: 35%;
     position: absolute;
     right: 10%;
-    top: 100%;
+    /* top: 100%; */
 }
 .award-img{
     height: 60px;
@@ -43,7 +48,7 @@ section{
 
 h1{
     margin-top: auto;
-    font-size: 3.1rem;
+    font-size: 5rem;
     font-weight: 600;
     font-family: 'Shantell Sans', cursive;
 }
@@ -51,7 +56,10 @@ span{
     color: #7B29DD;
 }
 .title{
-    margin: 9rem;
+    margin:  9rem 0 8rem 8rem;
+}
+.s-title{
+    margin: 8rem;
 }
 .btn-catalog{
         background: #FDC400;
@@ -59,23 +67,28 @@ span{
 }
 @media screen and (max-width: 480px){
 
-    .title {
+    .title,.s-title {
         margin: 5%;
         font-size: 10px;
         
     }
     h1{
-        font-size: 30px;
-
+        font-size:8vw;
     }
-    .img2{
-        top: 60%;
-}
+    p{
+       font-size:3vw;
+    }
+  
 }
 @media screen and (max-width: 830px){
 
-    .title{
+    .title,.s-title{
         margin: 5%;
     }
-
+    .img2{
+        display: none;
+}
+}
+.second-section{
+    z-index: 1;
 }
