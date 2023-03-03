@@ -3,13 +3,14 @@ body{
     background: #F6F4ED;
 }
 .navbar-brand{
+  
     color: #7B29DD;
     font-family:Clicker Script;
-    font-size: 30px;
+    font-size: 2.5rem;
 }
 .nav-link{
     font-family: Work Sans;
-    font-size:  13px;
+    font-size:  1rem;
 }
 .signup-button{
     background: #FDC400;
@@ -19,10 +20,30 @@ body{
     font-weight:600;
     font-size: small;
 }
-.top-section{
+.top-section {
     margin-top: 2rem;
 }
+.fourth-section{
+    /* background-image: linear-gradient(to right, #7B29DD , #FDC400); */
+    background: linear-gradient(
+        to top, 
+        #7B29DD 0%, 
+        #FDC400 73%, 
+        #F6F4ED 30%, 
+        #F6F4ED 100%
+      );
+    margin-top: 5rem;
+    padding: 4rem 4rem 0;
+    /* max-height: 50px; */
+
+}
+.fourth-section .text{
+    margin-top: 8rem;
+    padding-top: 3rem;
+}
 .img1{
+    background-image: radial-gradient(50% 50% at center, #fde699 0%,#0000 );
+  /* background-size: 100px 100px; */
     width: 52%;
     /* height: 50%; */
     position: absolute;
@@ -30,6 +51,7 @@ body{
 
 }
 .img2{
+    background-image: radial-gradient(50% 45% at center, #7B29DD 40%,#0000 );
     z-index: -1;
     width: 35%;
     position: absolute;
@@ -61,23 +83,27 @@ span{
 .s-title{
     margin: 8rem;
 }
+.s-title h1 ,.th-title h1{
+    font-size: 3rem;
+}
 .btn-catalog{
         background: #FDC400;
 
 }
 @media screen and (max-width: 480px){
 
-    .title,.s-title {
+    .title,.s-title, .text {
         margin: 5%;
         font-size: 10px;
         
     }
-    h1{
-        font-size:8vw;
+    h1 {
+        font-size:8vw !important;
     }
     p{
-       font-size:3vw;
+       font-size:3vw !important;
     }
+  
   
 }
 @media screen and (max-width: 830px){
@@ -85,10 +111,74 @@ span{
     .title,.s-title{
         margin: 5%;
     }
+ 
+
+}
+@media screen and (max-width: 767.5px){
+
     .img2{
         display: none;
 }
 }
+
+
+
 .second-section{
     z-index: 1;
+}
+.topseling-text{
+    text-align-last: center;
+    font-size: medium;
+}
+.top-selling-imgs img{
+    width: 15rem;
+}
+.first-product{
+    background: linear-gradient(
+        to top, 
+        #FFDBDF 0%, 
+        #FFDBDF 65%, 
+        #F6F4ED 30%, 
+        #F6F4ED 100%
+      );
+}
+.second-product{
+    background: linear-gradient(
+        to top, 
+        #E0E3E5 0%, 
+        #E0E3E5 65%, 
+        #F6F4ED 30%, 
+        #F6F4ED 100%
+      );
+}
+.third-product{
+    background: linear-gradient(
+        to top, 
+        #DBEFFF 0%, 
+        #DBEFFF 65%, 
+        #F6F4ED 30%, 
+        #F6F4ED 100%
+      );
+}
+.fourth-product{
+    background: linear-gradient(
+        to top, 
+        #FFE8DB 0%, 
+        #FFE8DB 65%, 
+        #F6F4ED 30%, 
+        #F6F4ED 100%
+      );
+}
+.high-quality img{
+    width: 100%;
+    /* max-height: 4rem; */
+
+}
+.favorite-collection h3{
+    font-family: 'Shantell Sans', cursive;
+    font-weight: bold ;    
+}
+.favorite-collection {
+    margin-top: 5rem;
+   
 }
