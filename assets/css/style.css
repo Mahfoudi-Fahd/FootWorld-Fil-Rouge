@@ -111,6 +111,9 @@ span{
     .title,.s-title{
         margin: 5%;
     }
+    .fourth-section .col-5{
+        display: none;
+    }
  
 
 }
@@ -182,3 +185,19 @@ span{
     margin-top: 5rem;
    
 }
+.nav-link{
+    color: black;
+}
+
+
+
+video {
+    /* object-fit: cover; */
+   width: 98vw;
+    /* height: 10%;  */
+    /* position: fixed; */
+    /* top: 0;
+    left: 0; */
+  }
+
+  
