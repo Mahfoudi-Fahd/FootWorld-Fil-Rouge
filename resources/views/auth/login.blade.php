@@ -1,3 +1,7 @@
+<link rel="stylesheet" href={{url('css/style.css')}}>
+<link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
+
+
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
