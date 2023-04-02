@@ -82,7 +82,7 @@
                     tour travel lovers. Feel the tightness and comfort of these items.</p>
                     <button class="btn btn-catalog">Open Catalog</button>
             </div>
-                <img class="img1 " src="/assets/img/image.png" alt="shoes-image">
+                <img class="img1 " src="img/image.png" alt="shoes-image">
         </section>
     
     
@@ -92,7 +92,7 @@
                 <div class="shoes-features d-flex align-items-center">
                     <div class="col-md-9">
                         <div class="d-flex align-items-center mt-4">
-                            <img class="award-img" src="/assets/img/award.png" alt="">
+                            <img class="award-img" src="img/award.png" alt="">
                             <div>
                                 <h3>Best Quality Shoes</h3>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
@@ -100,7 +100,7 @@
                         </div>  
     
                         <div class="d-flex align-items-center mt-4">
-                            <img class="award-img" src="/assets/img/time.png" alt="">
+                            <img class="award-img" src="img/time.png" alt="">
                             <div>
                                 <h3>Long Lasting Shoes</h3>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
@@ -108,7 +108,7 @@
                         </div>  
     
                         <div class="d-flex align-items-center mt-4">
-                            <img class="award-img" src="/assets/img/price.png" alt="">
+                            <img class="award-img" src="img/price.png" alt="">
                             <div>
                                 <h3>Best Price Range</h3>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
@@ -116,7 +116,7 @@
                         </div> 
                         
                     </div>
-                    <img class="img2" src="/assets/img/image2.png" alt="" srcset="">
+                    <img class="img2" src="img/image2.png" alt="" srcset="">
                 </div> 
             </div>
         </section>
@@ -128,26 +128,13 @@
                 <p class="topseling-text col-md-7 col-sm-8 col-sm-auto mx-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
             </div>
             <div class="top-selling-imgs d-flex justify-content-center flex-wrap ">
+                @foreach($items as $item)
                 <div class="first-product mx-4">
-                    <img class="" src="/assets/img/AirMax.png" alt="">
-                    <h6 class="text-center ms-2">Nike Shoes Air Max</h6>
-                    <p class="text-center ms-2">price <span>150$</span> </p>
+                    <img class="" src="img/AirMax.png" alt="">
+                    <h6 class="text-center ms-2">{{ $item->name }}</h6>
+                    <p class="text-center ms-2">price <span>{{ $item->price }}$</span> </p>
                 </div>
-                <div class="second-product mx-4">
-                    <img class="" src="/assets/img/shoes2.png" alt="">
-                    <h6 class="text-center ms-2">Nike Shoes Air Max</h6>
-                    <p class="text-center ms-2">price <span>150$</span> </p>
-                </div>
-                <div class="third-product mx-4">
-                    <img class="" src="/assets/img/shoes3.png" alt="">
-                    <h6 class="text-center ms-2">Nike Shoes Air Max</h6>
-                    <p class="text-center ms-2">price <span>150$</span> </p>
-                </div>
-                <div class="fourth-product mx-4">
-                    <img class="" src="/assets/img/shoes4.png" alt="">
-                    <h6 class="text-center ms-2">Nike Shoes Air Max</h6>
-                    <p class="text-center ms-2">price <span>150$</span> </p>
-                </div>
+                @endforeach
     
             </div>
         </section>
@@ -156,7 +143,7 @@
         <section class="fourth-section">
             <div class="high-quality d-flex ">
                 <div class="col-5">
-                    <img class="" src="/assets/img/snicker.png" alt="">
+                    <img class="" src="img/snicker.png" alt="">
                 </div>
                 <div class="text col-md-7 col-sm-12">
                 <h3>We provide </h3>
@@ -173,19 +160,19 @@
                 <p class="d-flex justify-content-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
             </div>
             <div class="  collection-imgs d-flex justify-content-center flex-wrap">
-                <img class="col-3 m-1" src="/assets/img/shoe.png" alt="" >
-                <img class="col-3 m-1" src="/assets/img/shoe1.png" alt="">
-                <img class="col-3 m-1" src="/assets/img/shoe2.png" alt="">
-                <img class="col-3 m-1" src="/assets/img/shoe3.png" alt="">
-                <img class="col-3 m-1" src="/assets/img/shoe4.png" alt="">
-                <img class="col-3 m-1" src="/assets/img/shoe5.png" alt="">
+                <img class="col-3 m-1" src="img/shoe.png" alt="" >
+                <img class="col-3 m-1" src="img/shoe1.png" alt="">
+                <img class="col-3 m-1" src="img/shoe2.png" alt="">
+                <img class="col-3 m-1" src="img/shoe3.png" alt="">
+                <img class="col-3 m-1" src="img/shoe4.png" alt="">
+                <img class="col-3 m-1" src="img/shoe5.png" alt="">
     
             </div>
         </section>
        
     
         <section class="video-section mt-5 d-flex justify-content-center">
-            <video src="/assets/videos/Dior Air Jordan 1 - Cinematic Sneaker Video.mp4" data-no-fullscreen="true" autoplay loop playsinline muted></video>
+            <video src="img/Dior Air Jordan 1 - Cinematic Sneaker Video.mp4" data-no-fullscreen="true" autoplay loop playsinline muted></video>
             <a href="https://www.youtube.com/watch?v=lBpS4FXC51s&ab_channel=JoshBarolo" class="px-5 py-3 text-white btn border-white position-absolute" id="open-catalog">Watch Video</a>
             
         </section>
