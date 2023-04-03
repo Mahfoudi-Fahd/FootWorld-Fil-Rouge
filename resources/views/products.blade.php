@@ -77,9 +77,11 @@
                 
             </div>
             <div class="product-content">
+                <p class="description">{{ $item->description}}</p>
                 <h3 class="title"><a href="#">{{ $item->name }}</a></h3>
                 <div class="price">{{ $item->price }} MAD</div>
                 <a class="add-to-cart" href="#">add to cart</a>
+
             </div>
         </div>
     </div>

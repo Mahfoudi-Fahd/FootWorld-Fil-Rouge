@@ -397,7 +397,7 @@ video {
 
 
 
-  /* cardc style  */
+  /* cards style  */
 
   .product-grid{
     font-family: 'Poppins', sans-serif;
@@ -496,4 +496,10 @@ video {
 }
 @media screen and (max-width:1200px){
     .product-grid{ margin: 0 0 30px; }
+}
+.description{
+    opacity: 0;
+}
+.product-grid:hover .description{
+    opacity: 1;
 }
