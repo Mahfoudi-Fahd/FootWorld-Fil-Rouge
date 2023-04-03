@@ -29,7 +29,7 @@
             <option value="{{ $id }}">{{ $name }}</option>
             @endforeach
           </select>
-          <a class="ms-2 " href="#"><small><span>Create Category</span></small>  </a>
+          <a class="mt-1 me-2 d-flex justify-content-end" href="#"><small><span><i class='bx bxs-plus-circle'></i> Create Category</span></small>  </a>
           
           @error('day')
           <small class="text-danger">{{$message}}</small>
@@ -44,10 +44,22 @@
             @enderror
           </div>
 
+          <div class="form-group mt-3">
+            <label for="status">Status</label>
+            <select class="form-control mt-2" name="status" id="status">
+              <option selected disabled>Select status</option>
+              <option>Available</option>
+              <option>Out Of stock</option>
+            </select>
+            @error('status')
+            <small class="text-danger">{{$message}}</small>
+            @enderror
+          </div>
+      
         <div class="form-group mt-3">
           <label for="description">Description</label>
           <textarea class="form-control mt-2" name="description" id="description" rows="3"></textarea>
-          @error('day')
+          @error('description')
           <small class="text-danger">{{$message}}</small>
           @enderror
         </div>
@@ -69,6 +81,7 @@
                   <th scope="col">Image</th>
                   <th scope="col">Name</th>
                   <th scope="col">Price <span>MAD</span> </th>
+                  <th scope="col">Status</th>
                   <th scope="col">Description</th>
                   <th scope="col" class="text-center">Actions</th>
                 </tr>
@@ -80,6 +93,7 @@
                   <th scope="row"><img class="rounded-circle" src="img/shoes2.png" alt="Img" style="width:50px;height:50px;"></th>
                   <td>{{$item->name}}</td>
                   <td>{{$item->price}}</td>
+                  <td>{{$item->status}}</td>
                   <td class=" text-truncate" style="max-width: 100px;">{{$item->description}}</td>
                   <td class="text-center">
                     <a href="" class="btn btn-outline-secondary"><i class='bx bxs-edit' ></i></a>
