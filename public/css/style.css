@@ -42,7 +42,7 @@ input:focus{
 
 
 body{
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     background: #F6F4ED;
 }
 .navbar-brand{
@@ -390,7 +390,10 @@ video {
   .header-img{
     width: 100%;
   }
-  
+  .btn-light{
+    background:#7B29DD !important;
+    color: aliceblue;
+}
 
 
 

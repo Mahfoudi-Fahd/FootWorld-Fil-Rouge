@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,8 @@ class ItemController extends Controller
 
     public function view()
 {
+    $categories = Category::pluck('name', 'id')->toArray();
     $items = Item::get()->all();
-return view('/dashboard', compact('items'));}
+return view('/dashboard', compact('categories','items'));
+}
 }

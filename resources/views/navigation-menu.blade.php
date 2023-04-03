@@ -9,7 +9,7 @@
             <div class=" flex">
                 <!-- Logo -->
                 <div class="logo shrink-0 flex items-center">
-                    <a class="navbar-brand" href="{{ route('dashboard') }}">
+                    <a class="navbar-brand" href="{{ route('items.index') }}">
                         FootWorld
                     </a>
                 </div>
