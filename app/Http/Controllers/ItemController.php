@@ -19,4 +19,9 @@ class ItemController extends Controller
     $items = Item::get()->all();
     return view('/products', compact('items'));
 }
+
+    public function view()
+{
+    $items = Item::get()->all();
+return view('/dashboard', compact('items'));}
 }

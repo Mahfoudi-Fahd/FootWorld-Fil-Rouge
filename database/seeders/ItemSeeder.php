@@ -27,7 +27,7 @@ class ItemSeeder extends Seeder
                 'description' => "Description for item $i",
                 'category_id' => $categories->random()->id,
                 'image' => "image$i.jpg",
-                'price' => rand(10, 100),
+                'price' => rand(100, 1000),
                 'status' => 'available',
                 // 'user_id' => $users->random()->id,
             ]);
