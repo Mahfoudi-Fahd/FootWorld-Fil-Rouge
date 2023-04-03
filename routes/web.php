@@ -30,5 +30,6 @@ Route::middleware([
 
 
 
-Route::get('/', [ItemController::class, 'index']);
+Route::get('/', [ItemController::class, 'index'])->name('items.index');
+Route::get('/products',[ItemController::class,'show'])->name('items.show');
 
