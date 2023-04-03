@@ -5,11 +5,20 @@
 
 
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+    <div class="d-flex my-5 mx-5">
+        <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        </div>
+        <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        </div>
+        <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        </div>
+    </div>
 
 
     <form class="container " action=""  method="POST">
@@ -81,8 +90,8 @@
                   <th scope="col">Image</th>
                   <th scope="col">Name</th>
                   <th scope="col">Price <span>MAD</span> </th>
-                  <th scope="col">Status</th>
                   <th scope="col">Description</th>
+                  <th scope="col">Status</th>
                   <th scope="col" class="text-center">Actions</th>
                 </tr>
               </thead>
@@ -93,8 +102,9 @@
                   <th scope="row"><img class="rounded-circle" src="img/shoes2.png" alt="Img" style="width:50px;height:50px;"></th>
                   <td>{{$item->name}}</td>
                   <td>{{$item->price}}</td>
-                  <td>{{$item->status}}</td>
                   <td class=" text-truncate" style="max-width: 100px;">{{$item->description}}</td>
+                  <td class=" @if ($item->status == 'available') available @else out-of-stock @endif"><span>{{ $item->status }}</span></td>
+                  
                   <td class="text-center">
                     <a href="" class="btn btn-outline-secondary"><i class='bx bxs-edit' ></i></a>
                     <a href="" class="btn btn-outline-danger"><i class='bx bx-trash bx-tada' ></i></a>

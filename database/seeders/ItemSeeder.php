@@ -19,6 +19,7 @@ class ItemSeeder extends Seeder
         // Get all categories and users
         $categories = Category::all();
         $users = User::all();
+        $statuses = ['available', 'out of stock'];
 
         // Seed 50 items
         for ($i = 1; $i <= 50; $i++) {
@@ -28,7 +29,7 @@ class ItemSeeder extends Seeder
                 'category_id' => $categories->random()->id,
                 'image' => "image$i.jpg",
                 'price' => rand(100, 1000),
-                'status' => 'available',
+                'status' => $statuses[array_rand($statuses)],
                 // 'user_id' => $users->random()->id,
             ]);
         }

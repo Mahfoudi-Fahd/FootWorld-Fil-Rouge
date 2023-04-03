@@ -503,3 +503,21 @@ video {
 .product-grid:hover .description{
     opacity: 1;
 }
+
+.available span{
+    background: green;
+    color: white;
+    font-size: small;
+    border: solid 1px green;
+    border-radius: 5px;
+    padding:  0 2px 0 2px ;
+}
+.out-of-stock span{
+    background: rgb(185, 2, 2);
+    color: white;
+    font-size: small;
+    border: solid 1px rgb(185, 2, 2);;
+    border-radius: 5px;
+    padding:  0 2px 0 2px ;
+
+}
