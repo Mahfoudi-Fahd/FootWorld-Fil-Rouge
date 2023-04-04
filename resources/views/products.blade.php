@@ -71,7 +71,7 @@
         <div class="product-grid">
             <div class="product-image">
                 <a href="#" class="image">
-                    <img class="pic-1" src="img/shoes2.png">
+                    <img class="pic-1" src="{{ asset('/storage/'.$item->image)}}">
                 </a>
                 <span class="product-discount-label">-33%</span>
                 

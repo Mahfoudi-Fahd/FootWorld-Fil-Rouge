@@ -22,12 +22,12 @@ class ItemSeeder extends Seeder
         $statuses = ['available', 'out of stock'];
 
         // Seed 50 items
-        for ($i = 1; $i <= 50; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             Item::create([
                 'name' => "Item $i",
                 'description' => "Description for item $i",
                 'category_id' => $categories->random()->id,
-                'image' => "image$i.jpg",
+                'image' => "image$i.png",
                 'price' => rand(100, 1000),
                 'status' => $statuses[array_rand($statuses)],
                 // 'user_id' => $users->random()->id,

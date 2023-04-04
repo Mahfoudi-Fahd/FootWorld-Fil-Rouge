@@ -37,3 +37,13 @@ Route::get('/dashboard', [ItemController::class, 'view'])->name('dashboard');
 
 // add items
 Route::post('/dashboard', [ItemController::class, 'store'])->name('items.store');
+
+// delete item 
+Route::delete('/items/{item}', [ItemController::class, 'destroy'])->name('items.destroy');
+
+// edit item 
+Route::get('/items/{item}/edit', [ItemController::class,'edit'])->name('items.edit');
+
+// update item 
+Route::get('/items/{item}/update', [ItemController::class,'update'])->name('items.update');
+

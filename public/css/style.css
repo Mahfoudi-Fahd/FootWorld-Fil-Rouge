@@ -43,7 +43,7 @@ input:focus{
 
 body{
     /* margin-top: 1rem; */
-    background: #F6F4ED;
+    background: #f4edf6;
 }
 .navbar-brand{
   
@@ -531,7 +531,7 @@ video {
     display: inline-block;
   }
   
-  .btn {
+  .upload-btn-wrapper .btn {
     /* border: 2px solid gray; */
     color: gray;
     background-color: white;

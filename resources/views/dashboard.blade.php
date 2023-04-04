@@ -107,8 +107,15 @@
                   <td class=" @if ($item->status == 'available') available @else out-of-stock @endif"><span>{{ $item->status }}</span></td>
                   
                   <td class="text-center">
-                    <a href="" class="btn btn-outline-secondary"><i class='bx bxs-edit' ></i></a>
-                    <a href="" class="btn btn-outline-danger"><i class='bx bx-trash bx-tada' ></i></a>
+                    {{-- <a href="" class="btn btn-outline-secondary"><i class='bx bxs-edit' ></i></a> --}}
+                    <form action="{{ route('items.destroy', $item) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-danger"><i class='bx bx-trash bx-tada' ></i> </button>
+                    </form>
+                    <a href="{{route('items.edit',$item)}}" class="btn btn-outline-secondary"><i class='bx bxs-edit' ></i></a>
+
+                    
                   </td>
                 </tr>
               @endforeach

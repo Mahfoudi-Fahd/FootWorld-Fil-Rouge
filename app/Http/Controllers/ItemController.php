@@ -11,7 +11,7 @@ class ItemController extends Controller
 
     public function index()
 {
-    $items = Item::latest()->take(4)->get();
+    $categories = Item::latest()->take(4)->get();
     return view('/welcome', compact('items'));
 }
 
@@ -41,19 +41,29 @@ public function store(Request $request)
     $item->description = $request->description;
     $item->image = $request->file('image')->store('image','public');
 
-    // Handle file upload
-    // if ($request->hasFile('image')) {
-    //     $image = $request->file('image')->store('image','public');
-    //     // $filename = time() . '.' . $image->getClientOriginalExtension();
-        // $image->storeAs('public/img', $filename);
-        // $item->image = $filename;
-    // }
 
     $item->save();
 
 
     return redirect()->route('dashboard')->with('success', 'Item created successfully.');
 }
+
+
+public function destroy(Item $item)
+{
+    $item->delete();
+
+    return redirect()->route('dashboard')->with('success', 'Item deleted successfully');
+}
+
+
+public function edit(Item $item)
+{
+    $categories = Category::get()->all();
+    return view('edit', compact('item','categories'));
+}
+
+
 
 
 }
