@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->foreignId('category_id')->constrained();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->decimal('price', 8, 2);
             $table->enum('status', ['available', 'out of stock'])->default('available');
             $table->timestamps();

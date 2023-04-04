@@ -56,7 +56,7 @@
 
                     <div class="">
                         @if (Route::has('login'))
-                            <div class="d-flex m-auto">
+                            <div class="d-flex m-auto ">
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="text-sm text-dark">Dashboard</a>
                                 @else
@@ -80,7 +80,7 @@
                 <h1>awaits<span>everyday</span></h1>
                 <p class="mt-4">Production and sale of the best shoe of various types for
                     tour travel lovers. Feel the tightness and comfort of these items.</p>
-                    <button class="btn btn-catalog">Open Catalog</button>
+                    <a href="{{ route('items.show')}}" class="btn btn-catalog">Open Catalog</a>
             </div>
                 <img class="img1 " src="img/image.png" alt="shoes-image">
         </section>

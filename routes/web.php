@@ -35,3 +35,5 @@ Route::get('/products',[ItemController::class,'show'])->name('items.show');
 
 Route::get('/dashboard', [ItemController::class, 'view'])->name('dashboard');
 
+// add items
+Route::post('/dashboard', [ItemController::class, 'store'])->name('items.store');

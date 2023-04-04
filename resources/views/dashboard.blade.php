@@ -2,6 +2,8 @@
 <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 
 <x-app-layout>
@@ -21,18 +23,22 @@
     </div>
 
 
-    <form class="container " action=""  method="POST">
+
+    <form class="container " action="{{route('items.store')}}"  method="POST" enctype='multipart/form-data'>
         @csrf
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
         <div class="form-group mt-4">
-          <label for="name">Name</label>
-          <input class="form-control mt-2" name="name" id="name" placeholder="Name">
-          @error('name')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
-        </div>
+            <label for="name">Name</label>
+            <input class="form-control mt-2" name="name" id="name" placeholder="Name">
+         
+          </div>
         <div class="form-group mt-3">
           <label for="day">Category</label>
-          <select class="form-control mt-2" name="category" id="category">
+          <select class="form-control mt-2" name="category_id" id="category">
             <option selected disabled>Select Category</option>
             @foreach ($categories as $id => $name)
             <option value="{{ $id }}">{{ $name }}</option>
@@ -40,17 +46,12 @@
           </select>
           <a class="mt-1 me-2 d-flex justify-content-end" href="#"><small><span><i class='bx bxs-plus-circle'></i> Create Category</span></small>  </a>
           
-          @error('day')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
         </div>
 
         <div class="form-group mt-4">
             <label for="name">Price</label>
             <input  class="form-control mt-2" name="price" id="price" required placeholder="Price">
-            @error('price')
-            <small class="text-danger">{{$message}}</small>
-            @enderror
+          
           </div>
 
           <div class="form-group mt-3">
@@ -60,17 +61,17 @@
               <option>Available</option>
               <option>Out Of stock</option>
             </select>
-            @error('status')
-            <small class="text-danger">{{$message}}</small>
-            @enderror
+          </div>
+
+          <div class="form-group mt-3 upload-btn-wrapper">
+            <button class="btn"><i class='bx bxs-plus-circle'></i> Upload Image</button>
+            <input type="file" name="image" />
           </div>
       
         <div class="form-group mt-3">
           <label for="description">Description</label>
           <textarea class="form-control mt-2" name="description" id="description" rows="3"></textarea>
-          @error('description')
-          <small class="text-danger">{{$message}}</small>
-          @enderror
+          
         </div>
         <div class="d-flex justify-content-center">
           <button type="submit" class="col-md-4 mt-4 btn btn-light">Create</button>
@@ -99,7 +100,7 @@
               @foreach ($items as $item)
                 <tr>
                   <th scope="row">{{$item->id}}</th>
-                  <th scope="row"><img class="rounded-circle" src="img/shoes2.png" alt="Img" style="width:50px;height:50px;"></th>
+                  <th scope="row"><img class="rounded-circle" src="{{ asset('/storage/'.$item->image)}}" alt="Img" style="width:50px;height:50px;"></th>
                   <td>{{$item->name}}</td>
                   <td>{{$item->price}}</td>
                   <td class=" text-truncate" style="max-width: 100px;">{{$item->description}}</td>
