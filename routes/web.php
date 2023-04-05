@@ -44,6 +44,7 @@ Route::delete('/items/{item}', [ItemController::class, 'destroy'])->name('items.
 // edit item 
 Route::get('/items/{item}/edit', [ItemController::class,'edit'])->name('items.edit');
 
+
 // update item 
 Route::get('/items/{item}/update', [ItemController::class,'update'])->name('items.update');
 

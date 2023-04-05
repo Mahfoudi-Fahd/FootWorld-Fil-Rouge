@@ -11,7 +11,7 @@ class ItemController extends Controller
 
     public function index()
 {
-    $categories = Item::latest()->take(4)->get();
+    $items = Item::latest()->take(4)->get();
     return view('/welcome', compact('items'));
 }
 
@@ -32,7 +32,6 @@ return view('/dashboard', compact('categories','items'));
 
 public function store(Request $request)
 {
-    // dd($request);
     $item = new Item;
     $item->name = $request->name;
     $item->category_id = $request->category_id;
@@ -56,11 +55,10 @@ public function destroy(Item $item)
     return redirect()->route('dashboard')->with('success', 'Item deleted successfully');
 }
 
-
 public function edit(Item $item)
 {
-    $categories = Category::get()->all();
-    return view('edit', compact('item','categories'));
+    $categories = Category::all();
+    return view('edit-item', compact('item', 'categories'));
 }
 
 
