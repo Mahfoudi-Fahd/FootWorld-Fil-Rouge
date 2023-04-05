@@ -31,11 +31,11 @@
     </div>
 
 {{-- Forms Buttons --}}
-    <div class="button-container text-center"> 
-      <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItem" aria-expanded="false" aria-controls="collapseItem">
+    <div class="button-container text-center mb-5"> 
+      <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItem" aria-expanded="false" aria-controls="collapseItem"><i class='bx bxs-plus-circle'></i>
         Add Item 
       </button>
-      <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory">
+      <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory"><i class='bx bxs-plus-circle'></i>
         Add Category 
       </button>
     </div>
@@ -43,12 +43,20 @@
   {{-- Success Message --}}
 @if (session('success'))
   <div class="d-flex justify-content-center">
-     <div class="w-50 text-center alert alert-success">
-      {{ session('success') }}
-  </div>
+    <div id="success-message" class="alert alert-success">{{ session('success') }}</div>
+
   </div>
 @endif
   
+{{-- hide Success message  --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    setTimeout(function() {
+      $('#success-message').hide();
+    }, 5000); // 5000 milliseconds = 5 seconds
+  });
+</script>
 
  {{-- Category Form --}}
  <div class="collapse" id="collapseCategory">
@@ -57,8 +65,8 @@
       @csrf
   
       <div class="form-group mt-4">
-          <label for="name">Name</label>
-          <input class="form-control mt-2" name="name" id="name" placeholder="Name">
+          <label for="name">Category Name</label>
+          <input class="form-control mt-2" name="name" id="name" placeholder="Category Name">
        
         </div>
  
@@ -68,6 +76,9 @@
     </form>
       </div>
 </div>
+
+
+
 
  {{-- Item Form  --}}
   <div class="collapse" id="collapseItem">
@@ -112,8 +123,27 @@
 
           <div class="form-group mt-3 upload-btn-wrapper">
             <button class="btn"><i class='bx bxs-plus-circle'></i> Upload Image</button>
-            <input type="file" name="image" />
+            <input type="file" name="image" id="image"/>
           </div>
+          <div class="preview-image-container mt-3">
+            <img id="preview-image" src="#" alt="Preview image" class="w-20">
+          </div>
+
+{{-- Show Image Once uploded JQuery--}}
+<script>
+  $(document).ready(function() {
+    $('#image').on('change', function() {
+      var input = $(this)[0];
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $('#preview-image').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    });
+  });
+</script>
       
         <div class="form-group mt-3">
           <label for="description">Description</label>

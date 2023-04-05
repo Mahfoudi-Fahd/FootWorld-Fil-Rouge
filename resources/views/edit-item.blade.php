@@ -32,7 +32,7 @@
                 </option>
             @endforeach
           </select>
-          <a class="mt-1 me-2 d-flex justify-content-end" href="#"><small><span><i class='bx bxs-plus-circle'></i> Create Category</span></small>  </a>
+          {{-- <a class="mt-1 me-2 d-flex justify-content-end" href="#"><small><span><i class='bx bxs-plus-circle'></i> Create Category</span></small>  </a> --}}
           
         </div>
 
