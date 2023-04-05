@@ -61,6 +61,24 @@ public function edit(Item $item)
     return view('edit-item', compact('item', 'categories'));
 }
 
+public function update(Request $request, Item $item )
+{
+    
+    $item->name = $request->name;
+    $item->description = $request->description;
+    $item->category_id = $request->category_id;
+    $item->price = $request->price;
+    $item->status = $request->status;
+
+    $item->image = $request->file('image') ? $request->file('image')->store('image','public') : $item->image;
+
+    // Handle image upload
+
+
+    $item->save();
+
+    return redirect()->route('dashboard')->with('success', 'Item updated successfully.');
+}
 
 
 

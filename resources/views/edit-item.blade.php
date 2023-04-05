@@ -67,7 +67,8 @@
           
         </div>
         <div class="d-flex justify-content-center">
-          <button type="submit" class="col-md-4 mt-4 btn btn-light">Create</button>
+            <a href="{{route('dashboard')}}" class="col-md-4 mt-4 me-5 btn btn-outline-secondary">Discard</a>
+          <button type="submit" class="col-md-4 mt-4 btn btn-light">Update</button>
         </div>
       </form>
 </x-app-layout>

@@ -1,11 +1,20 @@
-<link rel="stylesheet" href={{url('css/style.css')}}>
-<link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{{-- ALL LINKS  --}}
+  <link rel="stylesheet" href={{url('css/style.css')}}>
+  <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+
+
+
 
 <x-app-layout>
+
+
+  {{-- Statistics Cards --}}
     <div class="d-flex my-5 mx-5">
         <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
@@ -21,15 +30,51 @@
         </div>
     </div>
 
-
-
-    <form class="container " action="{{route('items.store')}}"  method="POST" enctype='multipart/form-data'>
-        @csrf
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
+{{-- Forms Buttons --}}
+    <div class="button-container text-center"> 
+      <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItem" aria-expanded="false" aria-controls="collapseItem">
+        Add Item 
+      </button>
+      <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory">
+        Add Category 
+      </button>
     </div>
+
+  {{-- Success Message --}}
+@if (session('success'))
+  <div class="d-flex justify-content-center">
+     <div class="w-50 text-center alert alert-success">
+      {{ session('success') }}
+  </div>
+  </div>
 @endif
+  
+
+ {{-- Category Form --}}
+ <div class="collapse" id="collapseCategory">
+  <div class="">
+    <form class="container " action="{{route('items.store')}}"  method="POST" enctype='multipart/form-data'>
+      @csrf
+  
+      <div class="form-group mt-4">
+          <label for="name">Name</label>
+          <input class="form-control mt-2" name="name" id="name" placeholder="Name">
+       
+        </div>
+ 
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="col-md-4 mt-4 btn btn-light">Create</button>
+      </div>
+    </form>
+      </div>
+</div>
+
+ {{-- Item Form  --}}
+  <div class="collapse" id="collapseItem">
+    <div class="">
+      <form class="container " action="{{route('items.store')}}"  method="POST" enctype='multipart/form-data'>
+        @csrf
+    
         <div class="form-group mt-4">
             <label for="name">Name</label>
             <input class="form-control mt-2" name="name" id="name" placeholder="Name">
@@ -43,7 +88,10 @@
             <option value="{{ $id }}">{{ $name }}</option>
             @endforeach
           </select>
-          <a class="mt-1 me-2 d-flex justify-content-end" href="#"><small><span><i class='bx bxs-plus-circle'></i> Create Category</span></small>  </a>
+          <a class="mt-1 me-2 d-flex justify-content-end" href="#"><small><span><i class='bx bxs-plus-circle'></i>       <button class="" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory">
+            Add Category 
+          </button>
+    </span></small>  </a>
           
         </div>
 
@@ -76,10 +124,11 @@
           <button type="submit" class="col-md-4 mt-4 btn btn-light">Create</button>
         </div>
       </form>
-    
+        </div>
+  </div>
 
 
-
+{{-- Items Table --}}
       <div class="py-12">
         <div class="">
           <div class="container" style="overflow-x:auto;">
@@ -124,4 +173,6 @@
             </div>
         </div>
     </div>
+
+
 </x-app-layout>

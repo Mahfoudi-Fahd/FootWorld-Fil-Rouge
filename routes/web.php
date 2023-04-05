@@ -46,5 +46,5 @@ Route::get('/items/{item}/edit', [ItemController::class,'edit'])->name('items.ed
 
 
 // update item 
-Route::get('/items/{item}/update', [ItemController::class,'update'])->name('items.update');
+Route::put('/items/{item}/update', [ItemController::class,'update'])->name('items.update');
 
