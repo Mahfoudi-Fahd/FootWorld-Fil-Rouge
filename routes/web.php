@@ -48,3 +48,16 @@ Route::get('/items/{item}/edit', [ItemController::class,'edit'])->name('items.ed
 // update item 
 Route::put('/items/{item}/update', [ItemController::class,'update'])->name('items.update');
 
+Route::controller(ItemController::class)->group(function () {
+    Route::get('/',  'index')->name('items.index');
+    Route::get('/products','show')->name('items.show');
+    Route::get('/dashboard',  'view')->name('dashboard');
+    // add items
+    Route::post('/dashboard',  'store')->name('items.store');
+    // delete item 
+    Route::delete('/items/{item}',  'destroy')->name('items.destroy');
+    // edit item 
+    Route::get('/items/{item}/edit', 'edit')->name('items.edit');
+    // update item 
+    Route::put('/items/{item}/update', 'update')->name('items.update');
+    });

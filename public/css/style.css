@@ -72,8 +72,8 @@ body{
         to top, 
         #7B29DD 0%, 
         #FDC400 73%, 
-        #F6F4ED 30%, 
-        #F6F4ED 100%
+        #f4edf6 30%, 
+        #f4edf6 100%
       );
     margin-top: 5rem;
     padding: 4rem 4rem 0;
@@ -184,8 +184,8 @@ span{
         to top, 
         #FFDBDF 0%, 
         #FFDBDF 65%, 
-        #F6F4ED 30%, 
-        #F6F4ED 100%
+        #f4edf6 30%, 
+        #f4edf6 100%
       );
 }
 .second-product{
