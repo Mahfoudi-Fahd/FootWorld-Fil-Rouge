@@ -1,14 +1,3 @@
-{{-- ALL LINKS  --}}
-  <link rel="stylesheet" href={{url('css/style.css')}}>
-  <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-
-
-
 
 
 <x-app-layout>
@@ -129,21 +118,21 @@
             <img id="preview-image" src="#" alt="Preview image" class="w-20">
           </div>
 
-{{-- Show Image Once uploded JQuery--}}
-<script>
-  $(document).ready(function() {
-    $('#image').on('change', function() {
-      var input = $(this)[0];
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          $('#preview-image').attr('src', e.target.result);
-        }
-        reader.readAsDataURL(input.files[0]);
-      }
-    });
-  });
-</script>
+      {{-- Show Image Once uploded JQuery--}}
+        <script>
+          $(document).ready(function() {
+            $('#image').on('change', function() {
+              var input = $(this)[0];
+              if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                  $('#preview-image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+              }
+            });
+          });
+        </script>
       
         <div class="form-group mt-3">
           <label for="description">Description</label>
@@ -155,54 +144,14 @@
         </div>
       </form>
         </div>
-  </div>
+</div>
 
 
 {{-- Items Table --}}
-      <div class="py-12">
-        <div class="">
-          <div class="container" style="overflow-x:auto;">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Image</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Price <span>MAD</span> </th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Status</th>
-                  <th scope="col" class="text-center">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-              @foreach ($items as $item)
-                <tr>
-                  <th scope="row">{{$item->id}}</th>
-                  <th scope="row"><img class="rounded-circle" src="{{ asset('/storage/'.$item->image)}}" alt="Img" style="width:50px;height:50px;"></th>
-                  <td>{{$item->name}}</td>
-                  <td>{{$item->price}}</td>
-                  <td class=" text-truncate" style="max-width: 100px;">{{$item->description}}</td>
-                  <td class=" @if ($item->status == 'available') available @else out-of-stock @endif"><span>{{ $item->status }}</span></td>
-                  
-                  <td class="text-center">
-                    {{-- <a href="" class="btn btn-outline-secondary"><i class='bx bxs-edit' ></i></a> --}}
-                    <form action="{{ route('items.destroy', $item) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger"><i class='bx bx-trash bx-tada' ></i> </button>
-                    </form>
-                    <a href="{{route('items.edit',$item)}}" class="btn btn-outline-secondary"><i class='bx bxs-edit' ></i></a>
+<div>
+  @livewire('item-table')
+</div>
 
-                    
-                  </td>
-                </tr>
-              @endforeach
-              
-          </tbody>
-            </table>
-            </div>
-        </div>
-    </div>
 
 
 </x-app-layout>

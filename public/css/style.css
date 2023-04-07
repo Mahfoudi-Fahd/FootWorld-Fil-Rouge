@@ -549,4 +549,18 @@ video {
     opacity: 0;
   }
 
+  .search {
+    display: block;
+    width: 20%;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .search:focus {
+    border-color: #007bff;
+    outline: none;
+  }
   

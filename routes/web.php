@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,24 +31,6 @@ Route::middleware([
 
 
 
-Route::get('/', [ItemController::class, 'index'])->name('items.index');
-Route::get('/products',[ItemController::class,'show'])->name('items.show');
-
-Route::get('/dashboard', [ItemController::class, 'view'])->name('dashboard');
-
-// add items
-Route::post('/dashboard', [ItemController::class, 'store'])->name('items.store');
-
-// delete item 
-Route::delete('/items/{item}', [ItemController::class, 'destroy'])->name('items.destroy');
-
-// edit item 
-Route::get('/items/{item}/edit', [ItemController::class,'edit'])->name('items.edit');
-
-
-// update item 
-Route::put('/items/{item}/update', [ItemController::class,'update'])->name('items.update');
-
 Route::controller(ItemController::class)->group(function () {
     Route::get('/',  'index')->name('items.index');
     Route::get('/products','show')->name('items.show');
@@ -60,4 +43,16 @@ Route::controller(ItemController::class)->group(function () {
     Route::get('/items/{item}/edit', 'edit')->name('items.edit');
     // update item 
     Route::put('/items/{item}/update', 'update')->name('items.update');
+    });
+
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('/dashboard',  'view')->name('categories.index');
+    // add categories
+    Route::post('/dashboard',  'store')->name('categories.store');
+    // delete category 
+    Route::delete('/categories/{category}',  'destroy')->name('categories.destroy');
+    // edit category 
+    Route::get('/categories/{category}/edit', 'edit')->name('categories.edit');
+    // update category 
+    Route::put('/categories/{category}/update', 'update')->name('categories.update');
     });
