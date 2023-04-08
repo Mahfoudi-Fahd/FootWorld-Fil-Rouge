@@ -1,8 +1,13 @@
 
 <div class="py-12">
-    <div class="container text-end">
+    <div class="container  d-flex justify-content-between">
         <input type="text" wire:model="search"  class="search" placeholder="Search"  />
-     
+        <div class="button-container text-center mt-5 mb-5 "> 
+            <button class="btn btn-dark " type="button" data-bs-toggle="collapse" data-bs-target="#collapseItem" aria-expanded="false" aria-controls="collapseItem"><i class='bx bxs-plus-circle'></i>
+              Add Item 
+            </button>
+            
+          </div>
       </div>
     <div class="">
       <div class="container" style="overflow-x:auto;">
@@ -33,9 +38,9 @@
                 <form action="{{ route('items.destroy', $item) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-outline-danger"><i class='bx bx-trash bx-tada' ></i> </button>
+                    <button type="submit" class="btn btn-outline-danger"><i class='bx bx-trash bx-tada' ></i></button>
                 </form>
-                <a href="{{route('items.edit',$item)}}" class="btn btn-outline-secondary"><i class='bx bxs-edit' ></i></a>
+                <a href="{{route('items.edit',$item)}}" class="btn btn-outline-secondary"><i class='bx bxs-edit'></i></a>
 
                 
               </td>
@@ -46,9 +51,7 @@
         </table>
           <div>
             {{ $items->links()}}
-          
-        
-      </div>
+            </div>
         </div>
     </div>
 </div>

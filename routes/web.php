@@ -45,14 +45,17 @@ Route::controller(ItemController::class)->group(function () {
     Route::put('/items/{item}/update', 'update')->name('items.update');
     });
 
+
+    // Categories Routes
 Route::controller(CategoryController::class)->group(function () {
-    Route::get('/dashboard',  'view')->name('categories.index');
-    // add categories
-    Route::post('/dashboard',  'store')->name('categories.store');
-    // delete category 
+    // Route::get('/dashboard','index')->name('categories.index');
+    // // add category
+    Route::post('/create',  'store')->name('categories.store');
+    // // delete category 
     Route::delete('/categories/{category}',  'destroy')->name('categories.destroy');
-    // edit category 
-    Route::get('/categories/{category}/edit', 'edit')->name('categories.edit');
-    // update category 
-    Route::put('/categories/{category}/update', 'update')->name('categories.update');
+    // // edit category 
+    // Route::get('/categories/{category}/edit', 'edit')->name('categories.edit');
+    // // update category 
+    // Route::put('/categories/{category}/update', 'update')->name('categories.update');
     });
+    // Route::resource('category', CategoryController::class);

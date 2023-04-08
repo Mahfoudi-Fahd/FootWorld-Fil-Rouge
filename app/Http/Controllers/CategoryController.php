@@ -14,9 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+    //     $categories = Category::get()->all();
+    //     return view('/dashboard', compact('categories'));    
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -35,8 +35,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $item = new Category;
+        $item->name = $request->name;
+    
+    
+        $item->save();
+    
+    
+        return redirect()->route('dashboard')->with('success', 'Item created successfully.');    }
 
     /**
      * Display the specified resource.
@@ -57,8 +63,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
-    }
+        return view('edit-category', compact('category'));       }
 
     /**
      * Update the specified resource in storage.
@@ -69,8 +74,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
-    }
+         }
 
     /**
      * Remove the specified resource from storage.
@@ -80,6 +84,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
-    }
+        $category->delete();
+
+        return redirect()->route('dashboard')->with('success', 'Item deleted successfully');    }
 }

@@ -552,6 +552,8 @@ video {
   .search {
     display: block;
     width: 20%;
+    height: 10%;
+    margin-top: 3rem;
     padding: 5px;
     font-size: 16px;
     border: 2px solid #ccc;
@@ -564,3 +566,13 @@ video {
     outline: none;
   }
   
+
+  .input {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }

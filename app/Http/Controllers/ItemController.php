@@ -25,7 +25,8 @@ class ItemController extends Controller
 {
     $categories = Category::pluck('name', 'id')->toArray();
     $items = Item::get()->all();
-return view('/dashboard', compact('categories','items'));
+    // dd($items);
+return view('/dashboard', compact('categories'));
 }
 
 

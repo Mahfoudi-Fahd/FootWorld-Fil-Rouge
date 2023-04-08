@@ -19,15 +19,7 @@
         </div>
     </div>
 
-{{-- Forms Buttons --}}
-    <div class="button-container text-center mb-5"> 
-      <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItem" aria-expanded="false" aria-controls="collapseItem"><i class='bx bxs-plus-circle'></i>
-        Add Item 
-      </button>
-      <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory"><i class='bx bxs-plus-circle'></i>
-        Add Category 
-      </button>
-    </div>
+
 
   {{-- Success Message --}}
 @if (session('success'))
@@ -47,24 +39,7 @@
   });
 </script>
 
- {{-- Category Form --}}
- <div class="collapse" id="collapseCategory">
-  <div class="">
-    <form class="container " action="{{route('items.store')}}"  method="POST" enctype='multipart/form-data'>
-      @csrf
-  
-      <div class="form-group mt-4">
-          <label for="name">Category Name</label>
-          <input class="form-control mt-2" name="name" id="name" placeholder="Category Name">
-       
-        </div>
  
-      <div class="d-flex justify-content-center">
-        <button type="submit" class="col-md-4 mt-4 btn btn-light">Create</button>
-      </div>
-    </form>
-      </div>
-</div>
 
 
 
@@ -152,6 +127,26 @@
   @livewire('item-table')
 </div>
 
+{{-- Category Form --}}
+<div class="collapse" id="collapseCategory">
+  <form class="container " action="{{route('categories.store')}}"  method="POST" enctype='multipart/form-data'>
+    @csrf
 
+    <div class="form-group mt-4">
+        <label for="name">Name</label>
+        <input class="form-control mt-2" name="name" id="name" placeholder="Name">
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="col-md-4 mt-4 btn btn-light">Create</button>
+      </div>
+  </form>
+
+  
+</div>
+@include('edit-category-modal')
+
+<div>
+    @livewire('category-table')
+  </div>
 
 </x-app-layout>
