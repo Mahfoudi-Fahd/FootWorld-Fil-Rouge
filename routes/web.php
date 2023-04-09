@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::middleware([
     'auth:sanctum',
@@ -50,7 +52,7 @@ Route::controller(ItemController::class)->group(function () {
 Route::controller(CategoryController::class)->group(function () {
     // Route::get('/dashboard','index')->name('categories.index');
     // // add category
-    Route::post('/create',  'store')->name('categories.store');
+    Route::post('/create', 'store')->name('categories.store');
     // // delete category 
     Route::delete('/categories/{category}',  'destroy')->name('categories.destroy');
     // // edit category 
@@ -60,5 +62,7 @@ Route::controller(CategoryController::class)->group(function () {
     });
   
     Route::controller(ContactUsController::class)->group(function(){
-        Route::get('/contact','index')->name('contact.index');
+        Route::get('/contactUs','index')->name('contact.index');
+        Route::get('/contact','view')->name('contact-us.view');
+        Route::post('/store', 'store')->name('message.store');
     });
