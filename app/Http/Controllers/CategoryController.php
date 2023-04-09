@@ -63,7 +63,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('edit-category', compact('category'));       }
+        return view('edit-category-modal', compact('category'));
+
+    }
 
     /**
      * Update the specified resource in storage.
@@ -74,7 +76,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-         }
+        $category->name = $request->name;
+        
+        $category->save();
+    
+        return redirect()->route('dashboard');
+    }
+    
+
 
     /**
      * Remove the specified resource from storage.

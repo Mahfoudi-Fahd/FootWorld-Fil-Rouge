@@ -54,8 +54,11 @@ Route::controller(CategoryController::class)->group(function () {
     // // delete category 
     Route::delete('/categories/{category}',  'destroy')->name('categories.destroy');
     // // edit category 
-    // Route::get('/categories/{category}/edit', 'edit')->name('categories.edit');
+    Route::get('/categories/{category}/edit', 'edit')->name('categories.edit');
     // // update category 
-    // Route::put('/categories/{category}/update', 'update')->name('categories.update');
+    Route::put('/categories/{category}/update', 'update')->name('categories.update');
     });
-    // Route::resource('category', CategoryController::class);
+  
+    Route::controller(ContactUsController::class)->group(function(){
+        Route::get('/contact','index')->name('contact.index');
+    });

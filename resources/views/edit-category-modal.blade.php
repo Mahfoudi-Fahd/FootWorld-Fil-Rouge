@@ -1,12 +1,23 @@
-<form wire:submit.prevent="updateCategory">
-    <div class="form-group">
-      <label for="categoryName">Name</label>
-      <input type="text" class="form-control" id="categoryName" wire:model.defer="category.name">
-    </div>
-    <div class="form-group">
-      <label for="categoryDescription">Description</label>
-      <textarea class="form-control" id="categoryDescription" rows="3" wire:model.defer="category.description"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Save changes</button>
-  </form>
+
+      <x-app-layout>
+        <div class="container">
+               <form id="editCategoryForm" action="{{route('categories.update', $category->id)}}" method="POST">
+          @csrf
+          @method('PUT')
+          <div class="modal-body">
+            <input type="hidden" name="id" id="editId">
+            <div class="form-group">
+              <label for="editName">Name</label>
+              <input type="" name="name" class="form-control"  value="{{$category->name}}">
+            </div>
+          </div>
+          <div class="mt-5">
+            <a href="{{route('dashboard')}}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+        </form>
+        </div>
+      {{-- Form  --}}
+   
+      </x-app-layout>
   
