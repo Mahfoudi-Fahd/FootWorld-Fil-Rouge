@@ -5,7 +5,7 @@
         <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href={{url('css/style.css')}}>
+        <link rel="stylesheet" href={{url('css/product.css')}}>
 
 
 
@@ -24,18 +24,23 @@
     <div class="col-md-3 col-sm-6 mb-5">
         <div class="product-grid">
             <div class="product-image">
-                <a href="#" class="image">
+                <a href="{{route('items.discover', $item)}}" class="image">
                     <img class="pic-1" src="{{ asset('/storage/'.$item->image)}}">
                 </a>
                 <span class="product-discount-label">-33%</span>
                 
             </div>
             <div class="product-content">
-                <p class="description">{{ $item->description}}</p>
                 <h3 class="title"><a href="#">{{ $item->name }}</a></h3>
                 <div class="price">{{ $item->price }} MAD</div>
-                <a class="add-to-cart" href="#">add to cart</a>
 
+                {{-- <a class="add-to-cart" href="#">add to cart</a> --}}
+
+                <form action="{{url('addcart',$item->id)}}" method="POST">
+                    @csrf
+                    <input type="number" value="1" min="1" class="form-control" name="quantity">
+                    <input type="submit" class="btn add-to-cart" value="add to cart">
+                </form>
             </div>
         </div>
     </div>

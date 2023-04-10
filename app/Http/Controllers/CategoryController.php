@@ -42,7 +42,7 @@ class CategoryController extends Controller
         $item->save();
     
     
-        return redirect()->route('dashboard')->with('success', 'Item created successfully.');    }
+        return redirect()->route('dashboard')->with('success', 'Category created successfully.');    }
 
     /**
      * Display the specified resource.
@@ -95,5 +95,5 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('dashboard')->with('success', 'Item deleted successfully');    }
+        return redirect()->route('dashboard')->with('success', 'Category deleted successfully');    }
 }

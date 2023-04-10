@@ -79,7 +79,7 @@
                 @foreach($items as $item)
                 <div class="first-product mx-4">
                     <img class="" src="img/AirMax.png" alt="">
-                    <h6 class="text-center ms-2">{{ $item->name }}</h6>
+                    <h6 class="text-center ms-2 text-truncate" style="max-width: 220px;">{{ $item->name }}</h6>
                     <p class="text-center ms-2">price <span>{{ $item->price }}$</span> </p>
                 </div>
                 @endforeach

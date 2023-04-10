@@ -27,4 +27,9 @@ class Item extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function carts()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

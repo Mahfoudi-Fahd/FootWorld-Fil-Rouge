@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class ContactUsController extends Controller
 {
     public function index(){
-        return view('contact-us');
+        $messages = ContactUs::get()->all();
+
+        return view('contact-us',compact('messages'));
     }
     public function view(){
         return view('contact-us-form');

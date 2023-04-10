@@ -1,0 +1,83 @@
+
+.navbar-brand{
+    color: #7B29DD;
+    font-family:Clicker Script;
+    font-size: 4.5rem;
+}
+.logo a{
+    color: #7B29DD;
+    font-family:Clicker Script;
+    font-size: 2.5rem;
+}
+video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    background: black;
+  }
+.login{
+    position: absolute;
+    
+    /* left: 40rem; */
+    /* right: 50%; */
+    
+}
+.bg-lgray{
+    background: #80808042;
+}
+input:focus{
+    border-color: #80808042!important;
+}
+.login-form{
+    background: #80808070;
+    box-shadow: 3px 3px 88px black;
+}
+.min-h-screen {
+    min-height: 97vh;
+}
+
+
+body{
+    /* margin-top: 1rem; */
+    background: #f4edf6;
+}
+.navbar-brand{
+  
+    color: #7B29DD;
+    font-family:Clicker Script;
+    font-size: 2.5rem;
+}
+.nav-link{
+    font-family: Work Sans;
+    font-size:  1rem;
+}
+.signup-button{
+    background: #FDC400;
+    border: none;
+}
+.btn{
+    font-weight:600;
+    font-size: small;
+}
+
+.item-info{
+    margin-top: 5rem;
+}
+
+h1{
+    margin-top: auto;
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: 'Shantell Sans', cursive;
+}
+.btn-outline-light{
+    color: #7B29DD;
+    border-color: #7B29DD;
+}
+.btn-outline-light :hover{
+    background-color: #f4edf6;
+}

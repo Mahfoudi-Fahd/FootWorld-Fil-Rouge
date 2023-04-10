@@ -566,8 +566,7 @@ video {
     outline: none;
   }
   
-
-  .input {
+    .input {
     display: block;
     width: 100%;
     padding: 5px;
@@ -575,4 +574,17 @@ video {
     border: 2px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+  .discover-img{
+    float: left;
+    height: 40rem;
+  }
+  
+
+  .contact-name{
+    width: 47%;
+  }
+  .contact-email{
+    width: 47%;
   }

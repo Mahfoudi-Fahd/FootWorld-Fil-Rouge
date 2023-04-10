@@ -1,32 +1,41 @@
 
 
 @include('components.landing-nav')
+<div class="text-center mb-5 mt-5 ">
+    <h3>GET IN TOUCH</h3>
+    <p>Feel free to use our contact form to fill out any queries. We aim to respond within 1 working day. If you need urgent help, please use the chat with us option.</p>
+</div>
 
 @if (session('success'))
-  <div class="d-flex justify-content-center">
-    <div id="success-message" class="alert alert-success">{{ session('success') }}</div>
-
-  </div>
+<div class="d-flex justify-content-center">
+  <div id="success-message" class="alert alert-success alert-dismissible fade show w-50 " role="alert">
+    <strong >{{ session('success') }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>  
+</div>
 @endif
 
-<div class="container">
+<div class="container w-50">
     <form action="{{route('message.store')}}" method="post">
         @csrf
-        <div class="mb-3">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+        <div class="d-flex justify-content-between">
+            <div class="mb-3 contact-name">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+        
+            <div class="mb-3 contact-email" >  
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
         </div>
-    
         <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-    
-        <div class="mb-3">
-            <label for="message" class="form-label">Message:</label>
+            <label for="message" class="form-label">Message</label>
             <textarea class="form-control" id="message" name="message" required></textarea>
         </div>
-    
-        <button type="submit" class="btn btn-primary">Send</button>
+    <div class="text-center">
+
+        <button type="submit" class="btn btn-outline-secondary px-5 mt-3">Send</button>
+    </div>
     </form>
 </div>

@@ -34,6 +34,7 @@ Route::middleware([
 
 
 Route::controller(ItemController::class)->group(function () {
+    Route::get('discover/{id}','discover')->name('items.discover');
     Route::get('/',  'index')->name('items.index');
     Route::get('/products','show')->name('items.show');
     Route::get('/dashboard',  'view')->name('dashboard');
@@ -66,3 +67,7 @@ Route::controller(CategoryController::class)->group(function () {
         Route::get('/contact','view')->name('contact-us.view');
         Route::post('/store', 'store')->name('message.store');
     });
+
+
+    route::post('/addcart/{id}',[ItemController::class,'addcart']);
+    route::get('/showcart',[ItemController::class,'showcart']);

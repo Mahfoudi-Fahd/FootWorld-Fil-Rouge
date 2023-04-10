@@ -2,17 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
-
+    public function discover($id){
+        
+        $item = Item::findOrFail($id);
+        return view('show-product', compact('item'));
+}
     public function index()
 {
     $items = Item::latest()->take(4)->get();
-    return view('/welcome', compact('items'));
+    $user = auth()->user();
+    $count = Cart::where('user_id', $user->id)->count();
+
+    return view('/welcome', compact('items','count'));
 }
 
     public function show()
@@ -81,6 +90,29 @@ public function update(Request $request, Item $item )
     return redirect()->route('dashboard')->with('success', 'Item updated successfully.');
 }
 
+public function addcart(Request $request , $id){
+    if(Auth::id()){
 
+        $user=auth()->user();
+        $item=Item::find($id);
+        $cart=new Cart;
+
+        $cart->user_id = $user->id;
+        $cart->item_id = $item->id;
+        $cart->item_name = $item->name;
+        $cart->quantity = $request->quantity;
+        $cart->save();
+
+        return redirect()->back();
+
+    }else{
+        return redirect('login');
+    }
+}
+public function showcart(){
+    $user=auth()->user();
+    $carts=$user->carts()->with('item')->get();
+    return view('showcart',compact('carts'));
+}
 
 }
