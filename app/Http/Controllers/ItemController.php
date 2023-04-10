@@ -99,7 +99,6 @@ public function addcart(Request $request , $id){
 
         $cart->user_id = $user->id;
         $cart->item_id = $item->id;
-        $cart->item_name = $item->name;
         $cart->quantity = $request->quantity;
         $cart->save();
 
