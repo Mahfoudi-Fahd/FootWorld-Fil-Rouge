@@ -13,12 +13,12 @@ dd($carts);
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
           <div class="card shopping-cart" style="border-radius: 15px;">
-            <div class="card-body text-black">
+            <div class="card-body cart-card text-black">
   
               <div class="row">
                 <div class="col-lg-6 px-5 py-4">
   
-                  <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Your products</h3>
+                  <h1 class="mb-5 pt-2 text-center fs-1">Your products</h1>
 
                   @foreach($carts as $cart)
                   <div class="d-flex align-items-center mb-5">
@@ -29,7 +29,7 @@ dd($carts);
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
-                      <h5 class="text-primary">{{$cart->item->name}}</h5>
+                      <h5 class="text-info">{{$cart->item->name}}</h5>
                       <h6 style="color: #9e9e9e;">{{$cart->item->category->name}}</h6>
                       <div class="d-flex align-items-center">
                         <p class="fw-bold mb-0 me-5 pe-3">{{$cart->item->price}} DH</p>

@@ -588,3 +588,7 @@ video {
   .contact-email{
     width: 47%;
   }
+  .cart-card{
+    box-shadow: 1px 1px 39px darkgrey;
+    border-radius: 16px;
+  }
