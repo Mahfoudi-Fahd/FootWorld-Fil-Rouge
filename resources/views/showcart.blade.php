@@ -23,7 +23,18 @@ dd($carts);
     <label class="product-removal">Remove</label>
     <label class="product-line-price">Total</label>
   </div>
+  @php
+      $subtotal = 0;
+      $taxRate = 0.05;
+      $total = 0;
+      $tax = 0; 
+  @endphp
 @foreach($carts as $cart)
+@php
+    $subtotal += $cart->item->price*$cart->quantity;
+    $tax = $subtotal* $taxRate;
+    $total =  ($subtotal + $tax)+50 ;
+@endphp
   <div class="product">
     <div class="product-image">
       <img src="https://picsum.photos/640/360">
@@ -34,39 +45,65 @@ dd($carts);
     </div>
     <div class="product-price">{{$cart->item->price}} MAD</div>
     <div class="product-quantity">
-      <input type="number" value="1" min="1">
+      <input id="quantity" onchange="changeQuantity(event,{{ $cart->id }})" type="number" name="quantity" value="{{ $cart->quantity }}" 
+      class="w-6 text-center bg-gray-300" min="1"/>
     </div>
     <div class="product-removal">
-      <button class="remove-product">
-        Remove
-      </button>
+     
+      <form action="{{ route('cart.destroy', $cart->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="remove-product">
+          Remove
+        </button>    
+      </form>
     </div>
-    <div class="product-line-price">25.98</div>
+    <div class="product-line-price">{{ $cart->item->price*$cart->quantity." MAD" }}</div>
   </div>
 @endforeach
 
   <div class="totals">
     <div class="totals-item">
       <label>Subtotal</label>
-      <div class="totals-value" id="cart-subtotal">71.97</div>
+      <div class="totals-value" id="cart-subtotal">{{ $subtotal." MAD" }}</div>
     </div>
     <div class="totals-item">
       <label>Tax (5%)</label>
-      <div class="totals-value" id="cart-tax">3.60</div>
+      <div class="totals-value" id="cart-tax">{{$tax." MAD"}}</div>
     </div>
     <div class="totals-item">
       <label>Shipping</label>
-      <div class="totals-value" id="cart-shipping">15.00</div>
+      <div class="totals-value" id="cart-shipping">50 MAD</div>
     </div>
     <div class="totals-item totals-item-total">
       <label>Grand Total</label>
-      <div class="totals-value" id="cart-total">90.57</div>
+      <div class="totals-value" id="cart-total">{{$total." MAD"}}</div>
     </div>
   </div>
       
       <button class="checkout">Checkout</button>
 
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+  function changeQuantity(e,id){
+    $.ajax({
+        url: '{{ route('update.quantity') }}',
+        method: "put",
+        data: {
+            id: id,
+            quantity: e.target.value
+        },
+        success: function (response) {
+           console.log(response)
+        }
+    });
+  }
+</script>
 
 
 @include('components.footer')

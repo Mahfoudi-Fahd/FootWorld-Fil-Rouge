@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ItemController;
@@ -69,5 +70,7 @@ Route::controller(CategoryController::class)->group(function () {
     });
 
 
-    route::post('/addcart/{id}',[ItemController::class,'addcart']);
-    route::get('/showcart',[ItemController::class,'showcart']);
+    route::post('/addcart/{id}',[CartController::class,'addcart'])->middleware('auth:sanctum');
+    route::get('/showcart',[CartController::class,'showcart'])->name('showcart');
+    Route::post('update-cart', [CartController::class, 'updateCart'])->name('update.cart'); 
+    Route::delete('{cart}', [CartController::class, 'destroy'])->name('cart.destroy'); 

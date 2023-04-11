@@ -19,9 +19,8 @@ class ItemController extends Controller
 {
     $items = Item::latest()->take(4)->get();
     $user = auth()->user();
-    $count = Cart::where('user_id', $user->id)->count();
 
-    return view('/welcome', compact('items','count'));
+    return view('/welcome', compact('items'));
 }
 
     public function show()
@@ -90,28 +89,5 @@ public function update(Request $request, Item $item )
     return redirect()->route('dashboard')->with('success', 'Item updated successfully.');
 }
 
-public function addcart(Request $request , $id){
-    if(Auth::id()){
-
-        $user=auth()->user();
-        $item=Item::find($id);
-        $cart=new Cart;
-
-        $cart->user_id = $user->id;
-        $cart->item_id = $item->id;
-        $cart->quantity = $request->quantity;
-        $cart->save();
-
-        return redirect()->back();
-
-    }else{
-        return redirect('login');
-    }
-}
-public function showcart(){
-    $user=auth()->user();
-    $carts=$user->carts()->with('item')->get();
-    return view('showcart',compact('carts'));
-}
 
 }
