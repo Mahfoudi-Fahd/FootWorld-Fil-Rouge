@@ -15,8 +15,15 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
+            $table->Integer('user_id');
+            $table->string('fullname');
+            $table->string('email');
+            $table->string('phone');
+            $table->Integer('zipcode');
+            $table->mediumText('adress');
+            $table->string('status_message');
+            $table->mediumText('payment_mode');
+            $table->mediumText('payment_id')->nullable();
             $table->timestamps();
         });
     }

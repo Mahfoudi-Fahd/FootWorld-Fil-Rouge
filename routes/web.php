@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
@@ -74,3 +75,6 @@ Route::controller(CategoryController::class)->group(function () {
     route::get('/showcart',[CartController::class,'showcart'])->name('showcart');
     Route::post('update-cart', [CartController::class, 'updateCart'])->name('update.cart'); 
     Route::delete('{cart}', [CartController::class, 'destroy'])->name('cart.destroy'); 
+
+
+    Route::get('checkout',[CheckoutController::class,'index'])->name('checkout.index');

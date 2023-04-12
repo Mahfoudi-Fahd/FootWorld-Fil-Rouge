@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Cashier\Billable;
+
 
 class User extends Authenticatable
 {
@@ -67,4 +69,5 @@ class User extends Authenticatable
     public function carts() {
         return $this->hasMany(Cart::class);
     }
+    
 }

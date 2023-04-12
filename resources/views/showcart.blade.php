@@ -81,7 +81,7 @@ dd($carts);
     </div>
   </div>
       
-      <button class="checkout">Checkout</button>
+      <a href="{{route('checkout.index')}}" class="checkout">Checkout</a>
 
 </div>
 
