@@ -2,20 +2,21 @@
 
 @include('components.landing-nav')
 
-@if (isset($error))
-    <div class="col-sm-12">
-        <div class="alert  alert-danger alert-dismissible fade show" role="alert">
-          $error
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-        </div>
-    </div>
-@endif
+
+
 <div class="text-center mb-5">
 
   <h1 class="fs-1">Shopping Cart</h1>
 </div>
+
+@if (session('success'))
+<div class="d-flex justify-content-center">
+  <div id="success-message" class="alert alert-success alert-dismissible fade show w-50 " role="alert">
+    <strong >{{ session('success') }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>  
+</div>
+@endif
 
 <div class="shopping-cart mt-5">
 

@@ -44,7 +44,7 @@ class CheckoutShow extends Component
                     'price'=> $cart->item->price,
                 ]);
             }
-            return true;
+            return $order;
         }
 
         public function codOrder()
