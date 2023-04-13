@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->Integer('zipcode');
-            $table->mediumText('adress');
+            $table->mediumText('address');
             $table->string('status_message');
             $table->mediumText('payment_mode');
             $table->mediumText('payment_id')->nullable();
