@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\ItemController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +79,6 @@ Route::controller(CategoryController::class)->group(function () {
 
 
     Route::get('checkout',[CheckoutController::class,'index'])->name('checkout.index');
+    
+    Route::get('orders',[OrderController::class,'index']);
+    Route::get('orders/{orderId}',[OrderController::class,'show']);
