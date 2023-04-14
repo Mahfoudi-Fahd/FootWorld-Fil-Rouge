@@ -4,6 +4,8 @@
 <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
 <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 
 
 <nav class="ms-lg-5 navbar navbar-expand-lg">
@@ -29,6 +31,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('contact-us.view')}}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('showcart')}}"><i class='bx bxs-cart'></i> Cart </a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +71,11 @@
         <p>{{ $item->description }}</p>
         <p class="price">Price: {{ $item->price }}</p>
         <div class="text-center">
-            <a href="" class="btn btn-outline-light col-11 ">Add to Cart</a>
+            <form action="{{url('addcart',$item->id)}}" method="POST">
+                @csrf
+                <input type="number" value="1" min="1" class="form-control product-quantity w-25" name="quantity">
+                <input type="submit" class="btn btn-outline-light col-11" value="add to cart">
+            </form>
         </div>
     </div>
 </div>

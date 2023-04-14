@@ -500,8 +500,9 @@ video {
 .description{
     opacity: 0;
 }
-.product-grid:hover .description{
-    opacity: 1;
+
+.product-grid:hover .title{
+   /* opacity: 0; */
 }
 
 .available span{
@@ -592,3 +593,22 @@ video {
     box-shadow: 1px 1px 39px darkgrey;
     border-radius: 16px;
   }
+
+  .checkout .form-control{
+    border-radius: 0px !important;
+}
+.checkout .form-control:focus{
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+}
+.checkout .nav-link{
+    border: 1px solid #b8b8b8;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+.checkout .tab-content{
+    padding-right: 10px;
+}
+.text-primary{
+    color: #7B29DD !important;
+}

@@ -38,7 +38,6 @@
 
                 <form action="{{url('addcart',$item->id)}}" method="POST">
                     @csrf
-                    <input type="number" value="1" min="1" class="form-control w-25" name="quantity">
                     <input type="submit" class="btn add-to-cart p-0" value="add to cart">
                 </form>
             </div>

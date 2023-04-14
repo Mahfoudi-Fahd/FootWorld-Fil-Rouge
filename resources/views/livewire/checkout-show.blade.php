@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label>Select Payment Mode: </label>
-                                    <div class="d-md-flex align-items-start">
+                                    <div class="d-md-flex align-items-start mt-4">
                                         <div class="nav col-md-3 flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                             <button class="nav-link fw-bold" id="cashOnDeliveryTab-tab" data-bs-toggle="pill" data-bs-target="#cashOnDeliveryTab" type="button" role="tab" aria-controls="cashOnDeliveryTab" aria-selected="true">Cash on Delivery</button>
                                             <button class="nav-link fw-bold" id="onlinePayment-tab" data-bs-toggle="pill" data-bs-target="#onlinePayment" type="button" role="tab" aria-controls="onlinePayment" aria-selected="false">Online Payment</button>
