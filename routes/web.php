@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactUsController;
+use App\Models\Order;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +83,6 @@ Route::controller(CategoryController::class)->group(function () {
     
     Route::get('orders',[OrderController::class,'index']);
     Route::get('orders/{orderId}',[OrderController::class,'show']);
+
+
+    Route::get('admin-orders',[App\Http\Controllers\Admin\OrderController::class ,'index'])->name('orders.index');
