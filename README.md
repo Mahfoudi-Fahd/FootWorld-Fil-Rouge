@@ -1,52 +1,54 @@
-<h1>Footworld</h1>
- E-commerce Website
+# Footworld
+
+E-commerce Website
 This is an e-commerce website developed with Laravel PHP framework that sells sneakers.
 
-Features
-User Authentication (Login & Register)
-User Authorization (Admin, Customer)
-User Profile
-Product Categories
-Product Search
-Product Details
-Cart Management
-Order Management
-Admin Panel
-CRUD Operations (Create, Read, Update, Delete)
-Error Handling
+### Features
+- User Authentication (Login & Register)
+- User Authorization (Admin, Customer)
+- User Profile
+- Product Categories
+- Product Search
+- Product Details
+- Cart Management
+- Order Management
+- Admin Panel
+- CRUD Operations (Create, Read, Update, Delete)
+- Error Handling
 
-Installation
+### Installation
 
 1. Clone the repository.
 
-    git clone https://github.com/your-username/footworld.git
+    `git clone https://github.com/your-username/footworld.git`
 
 2. Install the dependencies.
 
-    cd footworld
-    composer install
-    npm install
+    `cd footworld`
+    `composer install`
+    `npm install`
 
 3. Copy the .env.example file and rename it to .env. Update the database configuration and other environment variables.
 
-    cp .env.example .env
+    `cp .env.example .env`
 
 4. Generate the application key.
 
-    php artisan key:generate
+    `php artisan key:generate`
 
 5. Run the database migrations and seed the database with sample data.
   
-    php artisan migrate --seed
+    `php artisan migrate --seed`
 
 6. Start the server.
 
-    php artisan serve
+    `php artisan serve`
 
 7. Access the application by visiting http://localhost:8000 in your web browser.
 
 
-Usage
+### Usage
+
 Authentication
 Visit the login page to log in to the application as a registered user.
 Visit the register page to create a new account.
@@ -63,15 +65,15 @@ View the cart by clicking on the cart icon in the header.
 Update or remove products from the cart.
 Proceed to checkout to place an order.
 
-Orders
+### Orders
 
 View the list of orders by visiting the orders page.
 Click on an order to view its details.
 
-Contributing
+### Contributing
 
 If you would like to contribute to this project, please fork the repository and submit a pull request.
 
-License
+### License
 
 Copyright (c) 2023 MAHFOUDI FAHD
