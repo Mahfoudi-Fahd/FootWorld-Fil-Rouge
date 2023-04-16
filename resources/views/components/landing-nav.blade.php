@@ -10,7 +10,7 @@
 <nav class="ms-lg-5 navbar navbar-expand-lg">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex mx-5">
-             <a class="ms-lg-5 navbar-brand" href="#">Foot Woorld</a>
+             <a class="ms-lg-5 navbar-brand" href="{{route('items.index')}}">Foot Woorld</a>
         </div>
        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,9 +19,7 @@
         <div class="collapse navbar-collapse ms-5" id="navbarNav">
             <div class="d-flex m-auto">
                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}">Home</a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
                     </li>
