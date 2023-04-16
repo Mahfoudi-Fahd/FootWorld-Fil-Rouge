@@ -1,6 +1,4 @@
-# Footworld
-
-E-commerce Website
+# Footworld E-commerce Website
 This is an e-commerce website developed with Laravel PHP framework that sells sneakers.
 
 ### Features
