@@ -87,3 +87,4 @@ Route::controller(CategoryController::class)->group(function () {
 
     Route::get('admin-orders',[App\Http\Controllers\Admin\OrderController::class ,'index'])->name('orders.index');
     Route::get('admin-orders/{order}',[App\Http\Controllers\Admin\OrderController::class ,'show'])->name('orders.show');
+    Route::put('admin-orders/{order}',[App\Http\Controllers\Admin\OrderController::class ,'update']);
