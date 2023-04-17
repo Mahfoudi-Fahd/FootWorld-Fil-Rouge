@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="table-responsive container">
         <div>
-            <h2 class="fs-1 text-start">Users</h2>
+            <h2 class="fs-1 text-start">Roles</h2>
             <hr>
         </div>
         
@@ -30,7 +30,7 @@
             </tbody>
         </table>
         <div>
-            {{$data->links()}}
+            {{$roles->links()}}
         </div>
     </div>
 </x-app-layout>
