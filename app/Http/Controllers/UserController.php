@@ -9,6 +9,19 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
+    // function __construct()
+    // {
+    
+    // $this->middleware('permission:show role', ['only' => ['index']]);
+    // $this->middleware('permission:add role', ['only' => ['create','store']]);
+    // $this->middleware('permission:edit role ', ['only' => ['edit','update']]);
+    // $this->middleware('permission:delete role ', ['only' => ['destroy']]);
+    
+    // }
+
+
+
 /**
 * Display a listing of the resource.
 *
@@ -34,31 +47,7 @@ $roles = Role::pluck('name','name')->all();
 return view('users.Add_user',compact('roles'));
 
 }
-/**
-* Store a newly created resource in storage.
-*
-* @param  \Illuminate\Http\Request  $request
-* @return \Illuminate\Http\Response
-*/
-public function store(Request $request)
-{
-$this->validate($request, [
-'name' => 'required',
-'email' => 'required|email|unique:users,email',
-'password' => 'required|same:confirm-password',
-'roles_name' => 'required'
-]);
 
-$input = $request->all();
-
-
-$input['password'] = Hash::make($input['password']);
-
-$user = User::create($input);
-$user->assignRole($request->input('roles_name'));
-return redirect()->route('users.index')
-->with('success','تم اضافة المستخدم بنجاح');
-}
 
 /**
 * Display the specified resource.
@@ -96,19 +85,15 @@ public function update(Request $request, $id)
 $this->validate($request, [
 'name' => 'required',
 'email' => 'required|email|unique:users,email,'.$id,
-'password' => 'same:confirm-password',
 'roles' => 'required'
 ]);
 $input = $request->all();
-if(!empty($input['password'])){
-$input['password'] = Hash::make($input['password']);
-}else{
-$input = array_except($input,array('password'));
-}
+
 $user = User::find($id);
 $user->update($input);
 DB::table('model_has_roles')->where('model_id',$id)->delete();
 $user->assignRole($request->input('roles'));
+
 return redirect()->route('users.index')
 ->with('success','تم تحديث معلومات المستخدم بنجاح');
 }
