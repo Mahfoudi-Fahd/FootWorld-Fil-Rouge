@@ -30,7 +30,11 @@
                         <a class="nav-link" href="{{route('contact-us.view')}}">Contact Us</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('orders')}}"> Orders </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('showcart')}}"><i class='bx bxs-cart'></i> Cart </a>
+                       
                     </li>
                 </ul>
             </div>

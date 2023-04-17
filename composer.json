@@ -12,7 +12,9 @@
         "laravel/jetstream": "^3.0",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "laravelcollective/html": "^6.4",
         "livewire/livewire": "^2.12",
+        "spatie/laravel-permission": "^5.10",
         "stripe/stripe-php": "^10.12"
     },
     "require-dev": {
