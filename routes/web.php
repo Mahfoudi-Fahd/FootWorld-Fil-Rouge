@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ItemController;
@@ -7,7 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactUsController;
-use App\Models\Order;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,3 +89,7 @@ Route::controller(CategoryController::class)->group(function () {
     Route::get('admin-orders',[App\Http\Controllers\Admin\OrderController::class ,'index'])->name('orders.index');
     Route::get('admin-orders/{order}',[App\Http\Controllers\Admin\OrderController::class ,'show'])->name('orders.show');
     Route::put('admin-orders/{order}',[App\Http\Controllers\Admin\OrderController::class ,'update']);
+
+
+    Route::resource('users',UserController::class);
+    Route::resource('roles',RoleController::class);
