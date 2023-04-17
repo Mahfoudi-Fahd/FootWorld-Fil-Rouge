@@ -1,6 +1,4 @@
-# Footworld
-
-E-commerce Website
+# Footworld E-commerce Website
 This is an e-commerce website developed with Laravel PHP framework that sells sneakers.
 
 ### Features
@@ -49,30 +47,31 @@ This is an e-commerce website developed with Laravel PHP framework that sells sn
 
 ### Usage
 
-Authentication
-Visit the login page to log in to the application as a registered user.
-Visit the register page to create a new account.
-Admin Panel
-Log in to the application as an admin to access the admin panel.
-From the admin panel, you can manage products, categories, orders.
+#### Authentication
+- Visit the login page to log in to the application as a registered user.
+- Visit the register page to create a new account.
 
-Products
-View the list of available products by visiting  the products page.
-Filter products by category or search for specific products.
-Click on a product to view its details.
-Add products to the cart from the product details page or the products list page.
-View the cart by clicking on the cart icon in the header.
-Update or remove products from the cart.
-Proceed to checkout to place an order.
+#### Admin Panel
+- Log in to the application as an admin to access the admin panel.
+- From the admin panel, you can manage products, categories, orders.
+
+#### Products
+- View the list of available products by visiting  the products page.
+- Filter products by category or search for specific products.
+- Click on a product to view its details.
+- Add products to the cart from the product details page or the products list page.
+- View the cart by clicking on the cart icon in the header.
+- Update or remove products from the cart.
+- Proceed to checkout to place an order.
 
 ### Orders
 
-View the list of orders by visiting the orders page.
-Click on an order to view its details.
+- View the list of orders by visiting the orders page.
+- Click on an order to view its details.
 
 ### Contributing
 
-If you would like to contribute to this project, please fork the repository and submit a pull request.
+- If you would like to contribute to this project, please fork the repository and submit a pull request.
 
 ### License
 
