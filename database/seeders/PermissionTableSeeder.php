@@ -17,20 +17,35 @@ public function run()
 
 $permissions = [
 
-        
-        'add product',
-        'edit product',
-        'delete product',
+    
+    'show item',    
+    'add item',
+    'edit item',
+    'delete item',
 
-         'add category',
-         'edit category',
-        'delete category',
+    'show category',
+    'add category',
+    'edit category',
+    'delete category',
 
-        'show role',
-        'add role',
-        'edit role',
-        'delete role',
-     
+    'show role',
+    'add role',
+    'edit role',
+    'delete role',
+
+    'show user',
+    'add user',
+    'edit user',
+    'delete user',
+    
+    'show contact us',
+
+    'show orders',
+    'add orders',
+    'edit orders',
+    'delete orders',
+  
+
 
 ];
 

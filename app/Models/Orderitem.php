@@ -25,8 +25,8 @@ class Orderitem extends Model
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
  */
-public function item(): BelongsTo
-{
-    return $this->belongsTo(Item::class, 'item_id', 'id');
-}
+    public function item(): BelongsTo
+    {
+        return $this->belongsTo(Item::class, 'item_id', 'id');
+    }
 }
