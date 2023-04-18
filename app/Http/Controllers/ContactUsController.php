@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
+    function __construct()
+    {
+    
+    $this->middleware('permission:show contact us', ['only' => ['index']]);
+    
+    }
+
     public function index(){
         $messages = ContactUs::get()->all();
 

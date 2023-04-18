@@ -13,20 +13,22 @@
                         FootWorld
                     </a>
                 </div>
-
+                @hasrole('admin')
                 <!-- Navigation Links -->
-                @can('add product')
+                @can('add item')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
                 @endcan
+                @can('show contact us')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('contact.index') }}" :active="request()->routeIs('contact.index')">
                         {{ __('Contact Us') }}
                     </x-nav-link>
                 </div>
+                @endcan
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('orders.index') }}" :active="request()->routeIs('orders.index')">
                         {{ __('Orders') }}
@@ -45,7 +47,7 @@
                 </div>
                 @endcan
             </div>
-
+            @endhasrole
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

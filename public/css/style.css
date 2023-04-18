@@ -612,3 +612,10 @@ video {
 .text-primary{
     color: #7B29DD !important;
 }
+
+
+
+.welcome-dropdown{
+    left: -46px !important;
+
+}
