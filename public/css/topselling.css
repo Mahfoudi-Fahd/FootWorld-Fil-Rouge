@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap');
+/* body {
+
+background: #1f1a25;
+display: -webkit-box;
+display: flex;
+-webkit-box-align: center;
+align-items: center;
+-webkit-box-pack: center;
+justify-content: center;
+min-height: 100vh;
+} */
+.centeri img{
+top: -8%;
+margin-top: 50px;
+margin-bottom: 50px;
+left: 0%;
+border-radius: 50px;
+opacity:0.9;
+transition: 0.5s;
+
+
+}
+.centeri h1{
+transition: transform 2s;
+font-size: 50px;
+
+background: linear-gradient(178.6deg, rgb(20, 36, 50) 11.8%, rgb(124, 143, 161) 83.8%);
+/* / Clip the background to the text only / */
+-webkit-background-clip: text;
+-moz-background-clip: text;
+background-clip: text;
+
+/* / Set the text color to transparent / */
+color: transparent;
+
+/* / Set the fill color for the clipped text */ 
+-webkit-text-fill-color: transparent;
+-moz-text-fill-color: transparent;
+font-family: 'Big Shoulders Display', cursive;
+}
+.centeri .card:hover > p{
+opacity:1;  
+transform: scale(1.5);
+top:80%;
+
+}
+.centeri img:hover .card{
+
+
+}
+.centeri img, #parent {
+cursor: pointer;
+
+}
+.centeri .card:hover > img{
+opacity:1;
+transform: scale(1.4);
+ 
+}
+.centeri .card header {
+
+top: 120%;
+left: 0%;
+padding: 1px;
+border-radius:  25px;
+width: 250px;
+height: 90px;
+/* transition: all .5s; */
+/* opacity:0; */
+}
+.centeri .card:hover > header{
+
+opacity:1;
+width: 250px;
+height: 90px;
+ /* transform: translateY(-120px); */
+}
+
+.centeri .card {
+transition: transform .7s;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+border-radius: 500px;
+margin-top: 100px;
+text-align: center;
+font-family: arial;
+/* background: #A8A9AD; */
+/* background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, #A8A9AD 90%); */
+background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+width: 250px;
+height: 250px;
+}
+.centeri .card:hover{
+
+transform: scale(1.08)
+}
+
+.centeri span{
+
+position: relative;
+}
+.top-selling-imgs{
+    background: #f4edf6;
+}
+
+video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    background: black;
+  }
+
+  .video-section{
+    height: 32rem;
+
+  }

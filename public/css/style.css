@@ -87,7 +87,7 @@ body{
 .img1{
     background-image: radial-gradient(50% 50% at center, #fde699 0%,#0000 );
   /* background-size: 100px 100px; */
-    width: 52%;
+    width: 52vw;
     /* height: 50%; */
     position: absolute;
     right: 0;
@@ -416,7 +416,7 @@ video {
 }
 .product-grid .product-discount-label{
     color: #fff;
-    background: #78a206;
+    background: #012238;
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
@@ -456,10 +456,10 @@ video {
     transition: all 0.3s ease 0s;
     text-decoration: none;
 }
-.product-grid .title a:hover{ color: #78a206; }
+.product-grid .title a:hover{ color: #1e4a7c; }
 
 .product-grid .price{
-    color: #78a206;
+    color: #1e4a7c;
     font-size: 17px;
     font-weight: 600;
     display: block;
@@ -473,7 +473,7 @@ video {
 .product-grid:hover .price{ opacity: 0; }
 .product-grid .add-to-cart{
     color: #fff;
-    background-color: #78a206;
+    background-color: #012238d4;
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
@@ -615,3 +615,5 @@ video {
     left: -46px !important;
 
 }
+
+

@@ -11,7 +11,7 @@
 <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
-        {{-- <link rel="stylesheet" href={{url('css/style.css')}}> --}}
+        <link rel="stylesheet" href={{url('css/topselling.css')}}>
 
     </head>
     
@@ -22,7 +22,7 @@
         <section class="top-section d-flex">
             <div class="title col-5 ">
                 <h1 >Comfort </h1>
-                <h1>awaits<span>everyday</span></h1>
+                <h1>awaits<span class=""> everyday</span></h1>
                 <p class="mt-4">Production and sale of the best shoe of various types for
                     tour travel lovers. Feel the tightness and comfort of these items.</p>
                     <a href="{{ route('items.show')}}" class="btn btn-catalog">Open Catalog</a>
@@ -69,19 +69,33 @@
     
         <section class="">
             <div class="th-title d-flex justify-content-center flex-wrap">
-                <h1 class="col-12 d-flex justify-content-center flex-wrap">A<span>top-selling</span>product</h1>
+                <h1 class="col-12 d-flex justify-content-center flex-wrap"><span>top-selling </span> products</h1>
                 <p class="topseling-text col-md-7 col-sm-8 col-sm-auto mx-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
             </div>
             <div class="top-selling-imgs d-flex justify-content-center flex-wrap ">
-                @foreach($items as $item)
+                {{-- @foreach($items as $item)
                 <div class="first-product mx-4">
                     <img class="" src="img/AirMax.png" alt="">
                     <h6 class="text-center ms-2 text-truncate" style="max-width: 220px;">{{ $item->name }}</h6>
                     <p class="text-center ms-2">price <span>{{ $item->price }}$</span> </p>
                 </div>
-                @endforeach
-    
-            </div>
+                @endforeach --}}
+                @foreach($items as $item)
+                <div class="centeri mx-4">
+                    <div class="card">
+                    
+                                        <a href="{{route('items.discover', $item)}}" class="image">
+                                            <img src="{{ asset('/storage/'.$item->image)}}" class="foto" style="width:100%">
+                                        </a>
+
+                    
+                       <header>
+                         <h1>{{ $item->name }}</h1>
+                      </div>
+                    </div>
+                    @endforeach 
+                </div>
+
         </section>
     
     
