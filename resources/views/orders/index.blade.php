@@ -1,8 +1,13 @@
 {{-- @include('components.landing-nav') --}}
 <x-app-layout>
-    
-    
-    <div class="py-3 py-md-5">
+<x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('My Orders') }}
+    </h2>
+</x-slot>
+        
+        
+    <div class="py-3 py-md-5 container">
     <div class="m-4">
         <div class="row">
             <div class="col-md-12">

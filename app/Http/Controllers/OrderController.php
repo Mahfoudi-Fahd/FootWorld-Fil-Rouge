@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
+   
+
 public function index(){
     $orders = Order::where('user_id', Auth::user()->id)->orderBy('created_at','desc')->paginate(5);
     return view('orders.index',compact('orders'));

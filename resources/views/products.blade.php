@@ -14,6 +14,7 @@
 @include('components.landing-nav')
 
 
+
 <img class="header-img" src="img/header2.jpg" alt="Your Website Logo">
 
 <div class="my-4 py-5 d-flex justify-content-center">

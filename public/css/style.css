@@ -501,10 +501,6 @@ video {
     opacity: 0;
 }
 
-.product-grid:hover .title{
-   /* opacity: 0; */
-}
-
 .available span{
     background: green;
     color: white;

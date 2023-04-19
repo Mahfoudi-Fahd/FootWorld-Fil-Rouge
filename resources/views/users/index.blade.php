@@ -1,5 +1,11 @@
 <x-app-layout>
-    <div class="table-responsive">
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('ALL Users') }}
+        </h2>
+    </x-slot>
+
+    <div class="table-responsive container mt-5">
         
         <table class="table">
             <thead>
