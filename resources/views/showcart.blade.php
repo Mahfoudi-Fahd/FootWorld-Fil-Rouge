@@ -1,5 +1,9 @@
 <link rel="stylesheet" href={{url('css/cart.css')}}> 
-
+<link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+       
 @include('components.landing-nav')
 
 
