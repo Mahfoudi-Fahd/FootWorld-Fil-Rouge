@@ -13,7 +13,6 @@
                         FootWorld
                     </a>
                 </div>
-                @hasrole('admin')
                 <!-- Navigation Links -->
                 @can('add item')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -22,6 +21,7 @@
                     </x-nav-link>
                 </div>
                 @endcan
+                @hasrole('admin')
                 @can('show contact us')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('contact.index') }}" :active="request()->routeIs('contact.index')">

@@ -1,5 +1,10 @@
 <x-app-layout>
-    <div class="">
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('Contact Us') }}
+    </h2>
+</x-slot>
+    <div class="mt-4">
         <div class="container" style="overflow-x:auto;">
           <table class="table">
             <thead>

@@ -37,8 +37,8 @@
                         <a class="nav-link" href="{{route('contact-us.view')}}">Contact Us</a>
                     </li>
                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('showcart')}}"><i class='bx bxs-cart'></i> Cart </a>
+                    <li class="nav-item ">
+                        <a class="nav-link" class="" href="{{url('showcart')}}"><i class='bx bx-cart-alt fs-3 ms-5'></i></a>
                        
                     </li>
                 </ul>
@@ -49,9 +49,7 @@
                 @if (Route::has('login'))
                     <div class="d-flex m-auto ">
                         @auth
-                        @can('add item')
-                            <a href="{{ url('/dashboard') }}" class="text-sm text-dark">Dashboard</a>
-                        @endcan
+                       
                         <div class="dropdown me-5">
                             <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >
                                 {{ Auth::user()->name }}
@@ -60,6 +58,9 @@
                               <li><x-dropdown-link href="{{ route('profile.show') }}">
                                 <i class='bx bxs-user-circle'> </i>  {{ __('Profile') }}
                             </x-dropdown-link></li>
+                            <li> @can('add item')
+                                <x-dropdown-link href="{{ url('/dashboard') }}" class="text-sm  text-decoration-none"><i class='bx bxs-dashboard'> </i> Dashboard</x-dropdown-link>
+                            @endcan</li>
                             </ul>
                           </div>
                         @else
