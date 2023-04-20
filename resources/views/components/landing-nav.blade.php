@@ -72,7 +72,7 @@
                     
                 @endif
             </div>
-            <a class="nav-link me-5" href="{{url('showcart')}}"><i class='bx bx-cart-alt'></i>Cart</a>
+            <a class="nav-link fs-5  me-5 d-flex align-items-center" href="{{url('showcart')}}"><i class='bx bx-cart-alt'></i> Cart</a>
 
         </div>
     </div>

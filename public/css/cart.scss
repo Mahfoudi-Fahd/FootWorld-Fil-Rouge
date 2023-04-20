@@ -16,7 +16,7 @@ $font-bold: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
 .product-image { float: left; width: 20%; }
 .product-details { float: left; width: 37%; }
 .product-price { float: left; width: 12%; }
-.product-quantity { float: left; width: 10%; }
+.product-quantity { float: left;  }
 .product-removal { float: left; width: 9%; }
 .product-line-price { float: left; width: 12%; text-align: right; }
 
@@ -259,4 +259,31 @@ text-align: center;
 .cart-title{
  color: #7B29DD;
 
+}
+
+.totals{
+  margin: 46px 0 50px 29px;
+
+}
+.shopping-cart{
+  margin: 5rem;
+  padding: 0 5rem 0 4rem;
+}
+
+@media screen and (max-width: 1133px) {
+  .cart-body{
+    margin: 3rem 0 0 0 !important;
+  }
+  
+}
+
+@media screen and (max-width: 900px) {
+  .shopping-cart{
+    margin: 1rem;
+    padding: 0;
+  }
+  .totals{
+    margin: 46px 0 50px 0;
+  
+  }
 }
