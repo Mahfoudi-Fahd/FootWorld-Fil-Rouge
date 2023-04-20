@@ -37,10 +37,7 @@
                         <a class="nav-link" href="{{route('contact-us.view')}}">Contact Us</a>
                     </li>
                   
-                    <li class="nav-item ">
-                        <a class="nav-link" class="" href="{{url('showcart')}}"><i class='bx bx-cart-alt fs-3 ms-5'></i></a>
-                       
-                    </li>
+                  
                 </ul>
             </div>
 
@@ -75,6 +72,8 @@
                     
                 @endif
             </div>
+            <a class="nav-link me-5" href="{{url('showcart')}}"><i class='bx bx-cart-alt'></i>Cart</a>
+
         </div>
     </div>
 

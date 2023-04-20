@@ -120,3 +120,8 @@ video {
     height: 32rem;
 
   }
+
+  .collection-text{
+    margin: 19px;
+    text-align: center;
+  }

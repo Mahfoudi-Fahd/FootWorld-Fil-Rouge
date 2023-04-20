@@ -11,6 +11,7 @@
 <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+        
         <link rel="stylesheet" href={{url('css/topselling.css')}}>
 
     </head>
@@ -99,15 +100,15 @@
         </section>
     
     
-        <section class="fourth-section">
-            <div class="high-quality d-flex ">
+        <section class="fourth-section ">
+            <div class="high-quality d-flex container">
                 <div class="col-5">
                     <img class="" src="img/snicker.png" alt="">
                 </div>
                 <div class="text col-md-7 col-sm-12">
-                <h3>We provide </h3>
-                    <h3>high quality footwear</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <h3>We provide <span>high quality</span>  footwear</h3>
+                    
+                 
                 </div>
     
             </div>
@@ -115,8 +116,8 @@
     
         <section class="favorite-collection">
             <div class="">
-                <h3 class="d-flex justify-content-center ">Our <span>favorite</span>collections</h3>
-                <p class="d-flex justify-content-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <h3 class="d-flex justify-content-center ">Our <span> favorite</span> collections</h3>
+                <p class="d-flex justify-content-center collection-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
             </div>
             <div class="  collection-imgs d-flex justify-content-center flex-wrap">
                 <img class="col-3 m-1" src="img/shoe.png" alt="" >

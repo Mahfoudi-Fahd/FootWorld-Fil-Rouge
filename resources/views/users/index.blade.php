@@ -30,8 +30,8 @@
                             @endforeach
                         @endif</td>
                         {{-- <td><a href="{{url('admin-orders/'.$item->id)}}" class="btn btn-info btn-sm"><i class='bx bx-show'></i></a></td> --}}
-                        <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-info"
-                            title="edit"><i class="las la-pen"></i></a></td>
+                        <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-secondary"
+                            title="edit"><i class='bx bxs-edit'></i></a></td>
                     </tr>
                 @empty
                     <tr>
