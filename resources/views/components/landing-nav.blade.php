@@ -58,6 +58,9 @@
                             <li> @can('add item')
                                 <x-dropdown-link href="{{ url('/dashboard') }}" class="text-sm  text-decoration-none"><i class='bx bxs-dashboard'> </i> Dashboard</x-dropdown-link>
                             @endcan</li>
+                            <li><x-dropdown-link href="{{ url('orders') }}">
+                                <i class='bx bxs-package'></i>  {{ __('Orders') }}
+                            </x-dropdown-link></li>
                             </ul>
                           </div>
                         @else
