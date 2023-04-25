@@ -24,11 +24,13 @@
                         <td>{{ $user->id}}</td>
                         <td>{{ $user->name}}</td>
                         <td>{{ $user->email}}</td>
-                        <td> @if (!empty($user->getRoleNames()))
+                        <td>
+                             @if (!empty($user->getRoleNames()))
                             @foreach ($user->getRoleNames() as $v)
                                 <label class="">{{ $v }}</label>
                             @endforeach
-                        @endif</td>
+                        @endif
+                    </td>
                         {{-- <td><a href="{{url('admin-orders/'.$item->id)}}" class="btn btn-info btn-sm"><i class='bx bx-show'></i></a></td> --}}
                         <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-secondary"
                             title="edit"><i class='bx bxs-edit'></i></a></td>

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href={{url('css/cart.css')}}> 
+<link rel="stylesheet" href={{url('css/style.css')}}> 
 <link rel="stylesheet" href={{url('css/product.css')}}> 
 <link rel="stylesheet" href={{url('css/topselling.css')}}> 
 <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -37,8 +38,8 @@
 
 <div class="d-flex justify-content-center flex-wrap shopping-cart ">
 
-  <div class="card cart-body card-body col-8 ">
-    <div class="column-labels ">
+  <div class=" cart-body col-8 ">
+    <div class="column-labels  ">
       <label class="product-image">Image</label>
       <label class="product-details">Product</label>
       <label class="product-price">Price</label>
@@ -60,7 +61,7 @@
         $tax = $subtotal* $taxRate;
         $total =  ($subtotal + $tax)+50 ;
     @endphp
-    <div class="product">
+    <div class="product border-bottom pb-4 d-flex card-body bg-transparent">
       <div class="product-image">
         <img src="https://picsum.photos/640/360">
       </div>
