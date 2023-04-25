@@ -1,4 +1,4 @@
-<footer class=" p-5 mt-5">
+<footer class="border-top p-5 mt-5">
     <div class="row d-flex justify-content-around">
         <div class="col-lg-3 mb-3">
             <h1 class="navbar-brand">Foot <span>World</span></h1>

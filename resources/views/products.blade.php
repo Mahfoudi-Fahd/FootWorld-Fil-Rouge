@@ -49,4 +49,4 @@
 
     @endforeach
 </div>
-
+@include('components.footer')

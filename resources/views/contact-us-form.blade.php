@@ -43,3 +43,4 @@
     </div>
     </form>
 </div>
+@include('components.footer')
