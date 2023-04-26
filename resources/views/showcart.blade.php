@@ -63,16 +63,15 @@
     @endphp
     <div class="product border-bottom pb-4 d-flex card-body bg-transparent">
       <div class="product-image">
-        <img src="https://picsum.photos/640/360">
+        <img src="{{ asset('/storage/'.$cart->item->image)}}">
       </div>
       <div class="product-details">
         <div class="product-title">{{$cart->item->name}}</div>
-        <p class="product-description">{{$cart->item->description}}</p>
       </div>
       <div class="product-price">{{$cart->item->price}} MAD</div>
       <div class="product-quantity">
         <input id="quantity" onchange="changeQuantity(event,{{ $cart->id }})" type="number" name="quantity" value="{{ $cart->quantity }}" 
-        class="w-6 text-center bg-gray-300" min="1"/>
+        class="w-6 text-center border " style="--bs-border-opacity: .5;" min="1"/>
       </div>
       <div class="product-line-price">{{ $cart->item->price*$cart->quantity." MAD" }}</div>
       <div class="product-removal">
@@ -80,8 +79,8 @@
         <form action="{{ route('cart.destroy', $cart->id) }}" method="POST">
           @csrf
           @method('DELETE')
-          <button type="submit" class="remove-product ms-4">
-            <i class='bx bxs-tag-x bx-tada bx-flip-vertical' ></i>
+          <button type="submit" class="btn fs-4 text-danger ms-4" >
+            <i class='bx bxs-tag-x ' ></i>
           </button>    
         </form>
       </div>

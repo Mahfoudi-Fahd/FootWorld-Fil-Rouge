@@ -6,18 +6,18 @@
 
 
   {{-- Statistics Cards --}}
-    <div class="d-flex my-5 mx-5">
-        <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <div class="d-flex justify-content-center my-5 mx-5">
+        <div class="align-items-center mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 col-3">
+          <h3 class="font-normal text-gray-700 dark:text-gray-600">Total Items:</h3> 
+          <p class="fs-3 font-normal text-gray-700 dark:text-gray-400 text-center">{{count($items)}}</p>
         </div>
-        <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 col-3">
+          <h3 class="font-normal text-gray-700 dark:text-gray-600">Total Users:</h3> 
+          <p class="fs-3 font-normal text-gray-700 dark:text-gray-400 text-center">{{$usersCount}}</p>
         </div>
-        <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        <div class="mx-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 col-3">
+          <h3 class="font-normal text-gray-700 dark:text-gray-600">Total Orders:</h3>  
+          <p class="fs-3 font-normal text-gray-700 dark:text-gray-400 text-center">{{$ordersCount}}</p>
         </div>
     </div>
 

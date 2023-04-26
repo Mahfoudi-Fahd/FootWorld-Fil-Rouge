@@ -31,11 +31,11 @@
             <div class="d-flex m-auto">
                  <ul class="navbar-nav">
                    
+                     <li class="nav-item">
+                         <a class="nav-link" href="{{ route('items.show') }}">Products</a>
+                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('items.show') }}">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('contact-us.view')}}">Contact Us</a>
@@ -71,7 +71,7 @@
                             <a href="{{ route('login') }}" class="btn signin-button">Log in</a>
     
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn signup-button">Register</a>
+                                <a href="{{ route('register') }}" class="btn signup-button me-5">Register</a>
                             @endif
                         @endauth
                     </div>

@@ -59,9 +59,9 @@
                                     <td width="10%" >{{$orderItem->item->name}}</td>
                                     <td width="10%"><img class="pic-1 w-50" src="{{ asset('/storage/'.$orderItem->item->image)}}">
                                     </td>
-                                    <td width="10%" >{{$orderItem->item->price ." $"}}</td>
+                                    <td width="10%" >{{$orderItem->item->price ." MAD "}}</td>
                                     <td width="10%" >{{$orderItem->quantity}}</td>
-                                    <td width="10%" class="fw-bold" >{{$orderItem->quantity * $orderItem->price ." $"}}</td>
+                                    <td width="10%" class="fw-bold" >{{$orderItem->quantity * $orderItem->price ." MAD "}}</td>
                                     @php
                                     
                                     $totalPrice += $orderItem->quantity * $orderItem->price
@@ -70,7 +70,7 @@
                            @endforeach
                            <tr>
                                <td colspan="5" class="fw-bold">Total Amount</td>
-                            <td colspan="1" class="fw-bold">${{$totalPrice}}</td>
+                            <td colspan="1" class="fw-bold">MAD {{$totalPrice}}</td>
                            </tr>
                         </tbody>
                     </table>

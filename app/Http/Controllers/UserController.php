@@ -19,6 +19,7 @@ class UserController extends Controller
         $this->middleware('permission:delete user', ['only' => ['destroy']]);
     }
 
+    
 
     /**
      * Display a listing of the resource.

@@ -68,7 +68,8 @@ body{
     margin-top: 5rem;
 }
 
-h1{
+h2{
+    text-align: left !important;
     margin-top: auto;
     font-size: 3rem;
     font-weight: 600;
@@ -81,3 +82,12 @@ h1{
 .btn-outline-light :hover{
     background-color: #f4edf6;
 }
+
+header {
+    background-image: url('https://i.ibb.co/4pfnVgJ/header2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 30vw;
+    /* background-size: 1900px; */
+  }

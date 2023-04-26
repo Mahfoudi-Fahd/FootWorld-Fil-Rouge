@@ -11,12 +11,15 @@
 
 
 {{-- Navbar --}}
+<header class="products-header">
+    @include('components.landing-nav')
+<div>
 
-@include('components.landing-nav')
+</div>
+</header>
 
 
 
-<img class="header-img" src="img/header2.jpg" alt="Your Website Logo">
 
 <div class="my-4 py-5 d-flex justify-content-center">
     <h1 class="fs-1">Our <span> Products</span></h3>
