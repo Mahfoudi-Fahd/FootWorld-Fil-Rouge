@@ -13,17 +13,31 @@
 @include('components.landing-nav')
 
 
+<div class="d-flex m-5  border-bottom flex-wrap">
+  <div class="col-md-5 col-sm-12 me-4">
+    <img src="https://cdn.shopify.com/s/files/1/0601/0362/2840/files/Jordan4s.jpg?v=1676649779" alt="" style="width: 100%; height: 100%; ">
+  </div>
+  <div class="col-md-6 col-sm-12  text-center ">
+    <hr>
+    <h4>TRADING SINCE 2011</h4>
+    <p>We will ship on the same working day if the order is placed by 2pm.</p> 
+    <button class="btn btn-dark rounded-1 py-2 ">SHOP NOW</button>
+    <hr>
+  </div>
+</div>
+
+
 
 {{-- <div class="cart-title text-center mb-5 bg-white py-3">
 
   <h1 class="fs-1 ">Shopping Cart</h1>
 </div> --}}
-<div class="pt-3 pt-md-4">
+{{-- <div class="pt-3 pt-md-4">
   <div class="container">
     <h4>Shopping Cart</h4>
     <hr>
   </div>    
-</div>
+</div> --}}
 
 @if (session('success'))
 <div class="d-flex justify-content-center">
@@ -36,9 +50,9 @@
 
 
 
-<div class="d-flex justify-content-center flex-wrap shopping-cart ">
+<div class="d-flex justify-content-center flex-wrap shopping-cart" >
 
-  <div class=" cart-body col-8 ">
+  <div class=" cart-body col-8" style="overflow-x:auto;">
     <div class="column-labels  ">
       <label class="product-image">Image</label>
       <label class="product-details">Product</label>
@@ -89,7 +103,7 @@
 
   </div>
 
-  <div class="totals card card-body ">
+  <div class="totals card card-body rounded-1 bg-white shadow-sm">
     <div class="totals-item">
       <label>Subtotal</label>
       <div class="totals-value" id="cart-subtotal">{{ $subtotal." MAD" }}</div>
@@ -111,22 +125,7 @@
       
 
 </div>
-<div class=" d-flex justify-content-center flex-wrap">
-  @foreach($items as $item)
-                <div class="centeri mx-4">
-                    <div class="card">
-                    
-                                        <a href="{{route('items.discover', $item)}}" class="image">
-                                            <img src="{{ asset('/storage/'.$item->image)}}" class="foto" style="width:100%">
-                                        </a>
 
-                    
-                       <header>
-                         <h1>{{ $item->name }}</h1>
-                      </div>
-                    </div>
-                    @endforeach 
-</div>
 
 
 

@@ -14,7 +14,8 @@
                 <!-- Logo -->
                 <div class="logo shrink-0 flex items-center">
                     <a class="navbar-brand" href="{{ route('items.index') }}">
-                        FootWorld
+                        <img src="/img/logo.png" alt="" style="height:50px;">
+
                     </a>
                 </div>
                 <!-- Navigation Links -->

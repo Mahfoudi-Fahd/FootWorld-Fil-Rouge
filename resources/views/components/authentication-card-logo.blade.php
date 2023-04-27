@@ -1,3 +1,3 @@
 <a href="/">
-    <h1 class="navbar-brand">FootWorld</h1>
+    <img src="/img/logo.png" alt="" style="height:71px;">
 </a>

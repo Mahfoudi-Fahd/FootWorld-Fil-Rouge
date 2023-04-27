@@ -91,7 +91,7 @@
 
                     
                        <header>
-                         <h1>{{ $item->name }}</h1>
+                         <h1 class="text-truncate " >{{ $item->name }}</h1>
                       </div>
                     </div>
                     @endforeach 

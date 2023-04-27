@@ -21,7 +21,9 @@
 <nav class="ms-lg-5 navbar navbar-expand-lg">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex mx-5">
-             <a class="ms-lg-5 navbar-brand" href="{{route('items.index')}}">Foot Woorld</a>
+             <a class="ms-lg-5 navbar-brand" href="{{route('items.index')}}">
+                <img src="/img/logo.png" alt="" style="height:50px;">
+             </a>
         </div>
        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,11 +43,12 @@
                         <a class="nav-link" href="{{route('contact-us.view')}}">Contact Us</a>
                     </li>
                   
-                  
+                    
                 </ul>
             </div>
-
-
+            
+            
+            <a class="nav-link fs-5  me-5 d-flex align-items-center" href="{{url('showcart')}}"><i class='bx bx-cart-alt'></i> Cart</a>
             <div class="">
                 @if (Route::has('login'))
                     <div class="d-flex m-auto ">
@@ -79,7 +82,6 @@
                     
                 @endif
             </div>
-            <a class="nav-link fs-5  me-5 d-flex align-items-center" href="{{url('showcart')}}"><i class='bx bx-cart-alt'></i> Cart</a>
 
         </div>
     </div>
