@@ -122,7 +122,7 @@ label {
 
 /* Totals section */
 .totals {
-  max-height: 15rem;
+  /* max-height: 15rem; */
 }
 .totals .totals-item {
   float: right;
@@ -148,15 +148,13 @@ label {
   border: 0;
   margin-top: 20px;
   padding: 6px 25px;
-  background-color: #FDC400;
+  background-color: #0c0c0c;
   color: #fff;
   border-radius: 3px;
   text-decoration: none;
 }
 
-.checkout:hover {
-  background-color: rgba(253, 194, 0, 0.7568627451);
-}
+
 
 /* Make adjustments for tablet */
 @media screen and (max-width: 650px) {

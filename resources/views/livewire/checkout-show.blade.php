@@ -5,13 +5,15 @@
  
 <meta name="viewport" content="width=device-width, initial-scale=1">
  --}}
+ 
+ <link rel="stylesheet" href={{url('css/product.css')}}> 
 
-
+ <h2 class="text-center fw-bold">Checkout</h2>
+ <hr>
 <div>
     <div class="py-3 py-md-4 checkout">
         <div class="container">
-            <h4>Checkout</h4>
-            <hr>
+            
     @if ($this->totalProductAmount != '0')
             <div class="row">
                 <div class="col-md-12 mb-4">

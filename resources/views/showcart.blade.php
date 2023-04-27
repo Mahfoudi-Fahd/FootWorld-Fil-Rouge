@@ -12,8 +12,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 @include('components.landing-nav')
 
-
-<div class="d-flex m-5  border-bottom flex-wrap">
+<h2 class="text-center fw-bold">CART</h2>
+<hr>
+<div class="d-flex justify-content-center m-5  border-bottom flex-wrap ">
   <div class="col-md-5 col-sm-12 me-4">
     <img src="https://cdn.shopify.com/s/files/1/0601/0362/2840/files/Jordan4s.jpg?v=1676649779" alt="" style="width: 100%; height: 100%; ">
   </div>
@@ -21,8 +22,8 @@
     <hr>
     <h4>TRADING SINCE 2011</h4>
     <p>We will ship on the same working day if the order is placed by 2pm.</p> 
-    <button class="btn btn-dark rounded-1 py-2 ">SHOP NOW</button>
     <hr>
+    <button class="btn btn-dark rounded-1 py-2 ">SHOP NOW</button>
   </div>
 </div>
 
@@ -52,7 +53,7 @@
 
 <div class="d-flex justify-content-center flex-wrap shopping-cart" >
 
-  <div class=" cart-body col-8" style="overflow-x:auto;">
+  <div class=" cart-body col-lg-8 col-md-11 col-sm-11" style="overflow-x:auto;">
     <div class="column-labels  ">
       <label class="product-image">Image</label>
       <label class="product-details">Product</label>
@@ -103,7 +104,8 @@
 
   </div>
 
-  <div class="totals card card-body rounded-1 bg-white shadow-sm">
+  <div class="totals card card-body rounded-1 bg-transparent shadow-sm">
+    <h5 class="border-bottom pb-3">Summary</h5>
     <div class="totals-item">
       <label>Subtotal</label>
       <div class="totals-value" id="cart-subtotal">{{ $subtotal." MAD" }}</div>
