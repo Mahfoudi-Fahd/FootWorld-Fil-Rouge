@@ -1,7 +1,13 @@
-@include('components.landing-nav')
-
-
-<div class="py-3 py-md-5">
+{{-- @include('components.landing-nav') --}}
+<x-app-layout>
+<x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('My Orders') }}
+    </h2>
+</x-slot>
+        
+        
+    <div class="py-3 py-md-5 container">
     <div class="m-4">
         <div class="row">
             <div class="col-md-12">
@@ -23,7 +29,7 @@
                             </thead>
                             <tbody>
                                 @forelse ($orders as $item)
-                                    <tr>
+                                <tr>
                                         <td>{{ $item->id}}</td>
                                         <td>{{ $item->fullname}}</td>
                                         <td>{{ $item->payment_mode}}</td>
@@ -42,10 +48,10 @@
                             {{$orders->links()}}
                         </div>
                     </div>
+                    
 
-
-
-
+                    
+                    
                 </div>
             </div>
 
@@ -53,3 +59,5 @@
 
     </div>
 </div>
+
+                </x-app-layout>

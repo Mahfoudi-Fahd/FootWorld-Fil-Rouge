@@ -8,13 +8,11 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-        <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href={{url('css/style.css')}}>
+        
+        <link rel="stylesheet" href={{url('css/topselling.css')}}>
 
     </head>
     
@@ -25,7 +23,7 @@
         <section class="top-section d-flex">
             <div class="title col-5 ">
                 <h1 >Comfort </h1>
-                <h1>awaits<span>everyday</span></h1>
+                <h1>awaits<span class=""> everyday</span></h1>
                 <p class="mt-4">Production and sale of the best shoe of various types for
                     tour travel lovers. Feel the tightness and comfort of these items.</p>
                     <a href="{{ route('items.show')}}" class="btn btn-catalog">Open Catalog</a>
@@ -72,31 +70,45 @@
     
         <section class="">
             <div class="th-title d-flex justify-content-center flex-wrap">
-                <h1 class="col-12 d-flex justify-content-center flex-wrap">A<span>top-selling</span>product</h1>
+                <h1 class="col-12 d-flex justify-content-center flex-wrap"><span>top-selling </span> products</h1>
                 <p class="topseling-text col-md-7 col-sm-8 col-sm-auto mx-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
             </div>
             <div class="top-selling-imgs d-flex justify-content-center flex-wrap ">
-                @foreach($items as $item)
+                {{-- @foreach($items as $item)
                 <div class="first-product mx-4">
                     <img class="" src="img/AirMax.png" alt="">
                     <h6 class="text-center ms-2 text-truncate" style="max-width: 220px;">{{ $item->name }}</h6>
                     <p class="text-center ms-2">price <span>{{ $item->price }}$</span> </p>
                 </div>
-                @endforeach
-    
-            </div>
+                @endforeach --}}
+                @foreach($items as $item)
+                <div class="centeri mx-4">
+                    <div class="card">
+                    
+                                        <a href="{{route('items.discover', $item)}}" class="image">
+                                            <img src="{{ asset('/storage/'.$item->image)}}" class="foto" style="width:100%">
+                                        </a>
+
+                    
+                       <header>
+                         <h1 class="text-truncate " >{{ $item->name }}</h1>
+                      </div>
+                    </div>
+                    @endforeach 
+                </div>
+
         </section>
     
     
-        <section class="fourth-section">
-            <div class="high-quality d-flex ">
+        <section class="fourth-section ">
+            <div class="high-quality d-flex container">
                 <div class="col-5">
                     <img class="" src="img/snicker.png" alt="">
                 </div>
                 <div class="text col-md-7 col-sm-12">
-                <h3>We provide </h3>
-                    <h3>high quality footwear</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <h3>We provide <span>high quality</span>  footwear</h3>
+                    
+                 
                 </div>
     
             </div>
@@ -104,8 +116,8 @@
     
         <section class="favorite-collection">
             <div class="">
-                <h3 class="d-flex justify-content-center ">Our <span>favorite</span>collections</h3>
-                <p class="d-flex justify-content-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <h3 class="d-flex justify-content-center ">Our <span> favorite</span> collections</h3>
+                <p class="d-flex justify-content-center collection-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
             </div>
             <div class="  collection-imgs d-flex justify-content-center flex-wrap">
                 <img class="col-3 m-1" src="img/shoe.png" alt="" >
@@ -125,9 +137,7 @@
             
         </section>
     
-        <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    
+        
         <section>
             <div class="container">
                 <h2>Our  Partners</h2>
@@ -139,14 +149,15 @@
                     <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
                     <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
                     <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
-                   
+                    
                 </section>
               </div>
             </section>
             
             
   @include('components.footer')
-    
-        <script src="{{ asset('script.js') }}"></script>
-    </body>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="{{ asset('script.js') }}"></script>
+</body>
 </html>

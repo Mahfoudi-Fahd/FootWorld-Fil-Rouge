@@ -1,6 +1,10 @@
+<link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 @include('components.landing-nav')
+
+
 <div class="text-center mb-5 mt-5 ">
     <h3>GET IN TOUCH</h3>
     <p>Feel free to use our contact form to fill out any queries. We aim to respond within 1 working day. If you need urgent help, please use the chat with us option.</p>
@@ -15,7 +19,7 @@
 </div>
 @endif
 
-<div class="container w-50">
+<div class="container ">
     <form action="{{route('message.store')}}" method="post">
         @csrf
         <div class="d-flex justify-content-between">
@@ -39,3 +43,4 @@
     </div>
     </form>
 </div>
+@include('components.footer')

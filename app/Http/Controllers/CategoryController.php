@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    function __construct()
+    {
+    
+    $this->middleware('permission:show category', ['only' => ['index']]);
+    $this->middleware('permission:add category', ['only' => ['store']]);
+    $this->middleware('permission:edit category ', ['only' => ['edit','update']]);
+    $this->middleware('permission:delete category ', ['only' => ['destroy']]);
+    
+    }
     /**
      * Display a listing of the resource.
      *

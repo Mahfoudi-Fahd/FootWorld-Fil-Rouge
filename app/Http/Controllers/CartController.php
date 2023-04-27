@@ -28,11 +28,13 @@ class CartController extends Controller
             return redirect('login');
         }
     }
+
     public function showcart(){
         $user=auth()->user();
-        
+        $items = Item::latest()->take(4)->get();
+
         $carts=$user->carts()->with('item')->get();
-        return view('showcart',compact('carts'));
+        return view('showcart',compact('carts','items'));
     }
 
 
@@ -56,4 +58,5 @@ class CartController extends Controller
 
     return redirect()->route('showcart')->with('success', 'Item deleted successfully');
 }
+
 }

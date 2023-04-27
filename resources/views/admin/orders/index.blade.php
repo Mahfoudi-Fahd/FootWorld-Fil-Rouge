@@ -1,22 +1,24 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
 
 <x-app-layout>
-    <div class="container">
-    <div>
-        <h2 class="ps-0 fs-2 text-start ">Today's Orders</h2>
-           <small> <i> Use fiter to show more</i></small>
-            <hr class="mb-5 mt-2">
-    </div>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Today Orders') }}
+        </h2>
+        {{-- <small> <i> Use fiter to show more</i></small> --}}
+    </x-slot>
+    <div class="container mt-5">
+    
     
     <form action="" method="GET">
         <div class="row">
         <div class="col-md-3">
         <label>Filter by Date</label>
-        <input type="date" name="date" value="{{ Request::get('date') ?? date('Y-m-d') }}" class="form-control" />
+        <input type="date" name="date" value="{{ Request::get('date') ?? date('Y-m-d') }}" class="form-control rounded border-light" />
         </div>
         <div class="col-md-3">
             <label>Filter by Status</label>
-            <select name="status" class="form-select">
+            <select name="status" class="form-select border-light">
                 <option value="">Select Status</option>
                 <option value="in progress" {{Request::get('status') == 'in progress'? 'selected' : ''}} >In Progress</option>
                 <option value="completed" {{Request::get('status') == 'completed'? 'selected' : ''}} >Completed</option>
@@ -28,7 +30,7 @@
         </div>
         <div class="col-md-6">
         <br/>
-        <button type="submit" class="btn btn-primary">Filter</button>
+        <button type="submit" class="btn btn-outline-info">Filter</button>
         </div>
     </form>
     

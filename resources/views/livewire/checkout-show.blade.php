@@ -1,15 +1,26 @@
+{{-- <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ --}}
+ 
+ <link rel="stylesheet" href={{url('css/product.css')}}> 
+
+ <h2 class="text-center fw-bold">Checkout</h2>
+ <hr>
 <div>
     <div class="py-3 py-md-4 checkout">
         <div class="container">
-            <h4>Checkout</h4>
-            <hr>
+            
     @if ($this->totalProductAmount != '0')
             <div class="row">
                 <div class="col-md-12 mb-4">
                     <div class="shadow bg-white p-3">
                         <h4 class="text-primary">
                             Item Total Amount :
-                            <span class="float-end">${{$totalProductAmount}}</span>
+                            <span class="float-end">MAD {{$totalProductAmount}}</span>
                         </h4>
                         <hr>
                         <small>* Items will be delivered in 3 - 5 days.</small>

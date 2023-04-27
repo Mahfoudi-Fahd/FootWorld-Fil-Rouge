@@ -1,6 +1,31 @@
 <link rel="stylesheet" href={{url('css/cart.css')}}> 
-
+<link rel="stylesheet" href={{url('css/style.css')}}> 
+<link rel="stylesheet" href={{url('css/product.css')}}> 
+<link rel="stylesheet" href={{url('css/topselling.css')}}> 
+<link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 @include('components.landing-nav')
+
+<h2 class="text-center fw-bold">CART</h2>
+<hr>
+<div class="d-flex justify-content-center m-5  border-bottom flex-wrap ">
+  <div class="col-md-5 col-sm-12 me-4">
+    <img src="https://cdn.shopify.com/s/files/1/0601/0362/2840/files/Jordan4s.jpg?v=1676649779" alt="" style="width: 100%; height: 100%; ">
+  </div>
+  <div class="col-md-6 col-sm-12  text-center ">
+    <hr>
+    <h4>TRADING SINCE 2011</h4>
+    <p>We will ship on the same working day if the order is placed by 2pm.</p> 
+    <hr>
+    <button class="btn btn-dark rounded-1 py-2 ">SHOP NOW</button>
+  </div>
+</div>
 
 
 
@@ -8,12 +33,12 @@
 
   <h1 class="fs-1 ">Shopping Cart</h1>
 </div> --}}
-<div class="pt-3 pt-md-4">
+{{-- <div class="pt-3 pt-md-4">
   <div class="container">
     <h4>Shopping Cart</h4>
     <hr>
   </div>    
-</div>
+</div> --}}
 
 @if (session('success'))
 <div class="d-flex justify-content-center">
@@ -26,10 +51,10 @@
 
 
 
-<div class="d-flex justify-content-center wrap shopping-cart m-5 ps-4 pe-5">
+<div class="d-flex justify-content-center flex-wrap shopping-cart" >
 
-  <div class="card card-body col-8 mx-5">
-    <div class="column-labels ">
+  <div class=" cart-body col-lg-8 col-md-11 col-sm-11" style="overflow-x:auto;">
+    <div class="column-labels  ">
       <label class="product-image">Image</label>
       <label class="product-details">Product</label>
       <label class="product-price">Price</label>
@@ -51,18 +76,17 @@
         $tax = $subtotal* $taxRate;
         $total =  ($subtotal + $tax)+50 ;
     @endphp
-    <div class="product">
+    <div class="product border-bottom pb-4 d-flex card-body bg-transparent">
       <div class="product-image">
-        <img src="https://picsum.photos/640/360">
+        <img src="{{ asset('/storage/'.$cart->item->image)}}">
       </div>
       <div class="product-details">
         <div class="product-title">{{$cart->item->name}}</div>
-        <p class="product-description">{{$cart->item->description}}</p>
       </div>
       <div class="product-price">{{$cart->item->price}} MAD</div>
       <div class="product-quantity">
         <input id="quantity" onchange="changeQuantity(event,{{ $cart->id }})" type="number" name="quantity" value="{{ $cart->quantity }}" 
-        class="w-6 text-center bg-gray-300" min="1"/>
+        class="w-6 text-center border " style="--bs-border-opacity: .5;" min="1"/>
       </div>
       <div class="product-line-price">{{ $cart->item->price*$cart->quantity." MAD" }}</div>
       <div class="product-removal">
@@ -70,8 +94,8 @@
         <form action="{{ route('cart.destroy', $cart->id) }}" method="POST">
           @csrf
           @method('DELETE')
-          <button type="submit" class="remove-product ms-4">
-            <i class='bx bxs-tag-x bx-tada bx-flip-vertical' ></i>
+          <button type="submit" class="btn fs-4 text-danger ms-4" >
+            <i class='bx bxs-tag-x ' ></i>
           </button>    
         </form>
       </div>
@@ -80,7 +104,8 @@
 
   </div>
 
-  <div class="totals card card-body ">
+  <div class="totals card card-body rounded-1 bg-transparent shadow-sm">
+    <h5 class="border-bottom pb-3">Summary</h5>
     <div class="totals-item">
       <label>Subtotal</label>
       <div class="totals-value" id="cart-subtotal">{{ $subtotal." MAD" }}</div>
@@ -106,6 +131,7 @@
 
 
 
+
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
@@ -123,6 +149,4 @@
     });
   }
 </script>
-
-
 @include('components.footer')

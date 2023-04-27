@@ -49,6 +49,7 @@ class CheckoutShow extends Component
 
         public function codOrder()
         {
+            
             $this->payment_mode= 'Cash On Delivery';
             $codOrder = $this->placeOrder();
             if($codOrder){
@@ -63,11 +64,14 @@ class CheckoutShow extends Component
         }
 
     public function TotalProductAmount(){
-
+        $this->totalProductAmount = 0;
         $this->carts = Cart::where('user_id',auth()->user()->id)->get();
         foreach ($this->carts as $cart){
-            $this->totalProductAmount = (($cart->total + ($cart->total * 0.05))+ 50  );
+            $this->totalProductAmount += (($cart->total + ($cart->total * 0.05)) );
+            
         }
+        
+        $this->totalProductAmount += 50 ;
         return $this->totalProductAmount;
     }
     

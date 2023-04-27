@@ -1,3 +1,7 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <link rel="stylesheet" href={{url('css/style.css')}}>
 <link href='https://fonts.googleapis.com/css?family=Clicker Script' rel='stylesheet'>
 {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> --}}
@@ -10,28 +14,51 @@
                 <!-- Logo -->
                 <div class="logo shrink-0 flex items-center">
                     <a class="navbar-brand" href="{{ route('items.index') }}">
-                        FootWorld
+                        <img src="/img/logo.png" alt="" style="height:50px;">
+
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
+                @can('add item')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @hasrole('admin')
+                @can('show contact us')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('contact.index') }}" :active="request()->routeIs('contact.index')">
                         {{ __('Contact Us') }}
                     </x-nav-link>
                 </div>
+                @endcan
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('orders.index') }}" :active="request()->routeIs('orders.index')">
                         {{ __('Orders') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+                        {{ __('Users') }}
+                    </x-nav-link>
+                </div>
+                @can('show role')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('roles.index') }}" :active="request()->routeIs('roles.index')">
+                        {{ __('Roles') }}
+                    </x-nav-link>
+                </div>
+                @endcan
+                @endhasrole
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ url('orders') }}" :active="request()->routeIs('orders')">
+                        {{ __('My Orders') }}
+                    </x-nav-link>
+                </div>
+                
             </div>
-
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

@@ -22,7 +22,6 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
 
 .product-quantity {
   float: left;
-  width: 10%;
 }
 
 .product-removal {
@@ -123,7 +122,7 @@ label {
 
 /* Totals section */
 .totals {
-  max-height: 15rem;
+  /* max-height: 15rem; */
 }
 .totals .totals-item {
   float: right;
@@ -149,15 +148,13 @@ label {
   border: 0;
   margin-top: 20px;
   padding: 6px 25px;
-  background-color: #FDC400;
+  background-color: #0c0c0c;
   color: #fff;
   border-radius: 3px;
   text-decoration: none;
 }
 
-.checkout:hover {
-  background-color: rgba(253, 194, 0, 0.7568627451);
-}
+
 
 /* Make adjustments for tablet */
 @media screen and (max-width: 650px) {
@@ -225,4 +222,28 @@ label {
 }
 .cart-title {
   color: #7B29DD;
+}
+
+.totals {
+  margin: 46px 0 50px 29px;
+}
+
+.shopping-cart {
+  margin: 5rem;
+  padding: 0 5rem 0 4rem;
+}
+
+@media screen and (max-width: 1133px) {
+  .cart-body {
+    margin: 3rem 0 0 0 !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .shopping-cart {
+    margin: 1rem;
+    padding: 0;
+  }
+  .totals {
+    margin: 46px 0 50px 0;
+  }
 }/*# sourceMappingURL=cart.css.map */

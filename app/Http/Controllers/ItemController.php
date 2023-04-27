@@ -5,11 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Item;
+use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
+
+    function __construct()
+    {
+    
+    $this->middleware('permission:show item', ['only' => ['view','discover']]);
+    $this->middleware('permission:add item', ['only' => ['store']]);
+    $this->middleware('permission:edit item', ['only' => ['edit']]);
+    $this->middleware('permission:delete item', ['only' => ['destroy']]);
+    
+    }
+
     public function discover($id){
         
         $item = Item::findOrFail($id);
@@ -19,6 +32,7 @@ class ItemController extends Controller
 {
     $items = Item::latest()->take(4)->get();
     $user = auth()->user();
+
 
     return view('/welcome', compact('items'));
 }
@@ -33,8 +47,11 @@ class ItemController extends Controller
 {
     $categories = Category::pluck('name', 'id')->toArray();
     $items = Item::get()->all();
+    $usersCount= User::all()->count();
+    $ordersCount=Order::all()->count();
+
     // dd($items);
-return view('/dashboard', compact('categories'));
+return view('/dashboard', compact('categories','usersCount','ordersCount','items'));
 }
 
 
@@ -63,6 +80,7 @@ public function destroy(Item $item)
 
     return redirect()->route('dashboard')->with('success', 'Item deleted successfully');
 }
+
 
 public function edit(Item $item)
 {

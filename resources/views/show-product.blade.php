@@ -7,8 +7,8 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
-
-<nav class="ms-lg-5 navbar navbar-expand-lg">
+@include('components.landing-nav')
+{{-- <nav class="ms-lg-5 navbar navbar-expand-lg">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex mx-5">
              <a class="ms-lg-5 navbar-brand" href="#">Foot Woorld</a>
@@ -58,24 +58,41 @@
         </div>
     </div>
 
-</nav> 
+</nav>  --}}
 
 
-<div class="d-flex flex-wrap">
-    <div class="col-6">
-        <img class="discover-img w-75" src="{{ asset('storage/'.$item->image) }}" alt="{{ $item->name }}">
+<div class="row mt-5">
+    <div class="col-md-7 col-sm-12">
+        <img class="w-100" src="{{ asset('storage/'.$item->image) }}" alt="{{ $item->name }}">
     </div>
 
-    <div class="item-info container col-6 ">
-        <h1>{{ $item->name }}</h1>
-        <p>{{ $item->description }}</p>
-        <p class="price">Price: {{ $item->price }}</p>
+    <div class="item-info container col-md-4 cols-sm-12 mt-4">
+        <h4 class="m-2 text-center">{{ $item->name }}</h4>
+        
+        <div class="ms-4 text-secondary  border-1 text-center my-3 col-11">
+            <h6 class="price fs-6">{{ $item->price }} MAD</h6>
+            <small>Tax not included. Shipping calculated at checkout.</small>
+        </div>
+       
+
         <div class="text-center">
             <form action="{{url('addcart',$item->id)}}" method="POST">
                 @csrf
-                <input type="number" value="1" min="1" class="form-control product-quantity w-25" name="quantity">
-                <input type="submit" class="btn btn-outline-light col-11" value="add to cart">
+                <div class="col-2">
+
+                    <input type="number" value="1" min="1" class="w-50 product-quantity m-3 bg-transparent border-secondary border-1 mb-4 ms-3 p-1" style="--bs-border-opacity: .5;" name="quantity" id="quantity">
+                </div>
+                <input type="submit" class="btn border-secondary rounded-1 col-11 py-3" style="--bs-border-opacity: .5;" value="ADD TO CART">
             </form>
+            <button class="btn  rounded-0 border-secondary col-11 py-3" style="--bs-border-opacity: .5;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Description
+                <div class="collapse " id="collapseExample">
+                  <div class="card card-body  bg-transparent mt-1 border-0 rounded-0">
+                    <p>{{ $item->description }}</p>
+                  </div>
+                </div>
+              </button>
         </div>
     </div>
 </div>
+@include('components.footer')

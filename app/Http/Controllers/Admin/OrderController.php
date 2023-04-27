@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    function __construct()
+    {
+
+    $this->middleware('permission:show orders', ['only' => ['index','show']]);
+    $this->middleware('permission:edit orders', ['only' => ['update']]);
+
+    }
+
     public function index(Request $request){
 
         // $orders = Order::paginate(5);
