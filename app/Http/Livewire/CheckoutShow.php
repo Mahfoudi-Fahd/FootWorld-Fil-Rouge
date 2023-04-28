@@ -4,8 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Cart;
 use App\Models\Order;
-use App\Models\Orderitem;
 use Livewire\Component;
+use App\Models\Orderitem;
+use Spatie\DiscordAlerts\Facades\DiscordAlert;
 
 class CheckoutShow extends Component
 {
@@ -55,6 +56,8 @@ class CheckoutShow extends Component
             if($codOrder){
 
                 Cart::where('user_id',auth()->user()->id)->delete();
+
+                DiscordAlert::message("New Order Has Been Placed  $codOrder");
 
                return redirect()->route('showcart')->with('success', 'Your Order Placed successfully!');
                 
