@@ -74,7 +74,7 @@
     @php
         $subtotal += $cart->item->price*$cart->quantity;
         $tax = $subtotal* $taxRate;
-        $total =  ($subtotal + $tax)+50 ;
+        $total =  ($subtotal + $tax) ;
     @endphp
     <div class="product border-bottom pb-4 d-flex card-body bg-transparent">
       <div class="product-image">
@@ -116,7 +116,7 @@
     </div>
     <div class="totals-item">
       <label>Shipping</label>
-      <div class="totals-value" id="cart-shipping">50 MAD</div>
+      <div class="totals-value" id="cart-shipping">Free</div>
     </div>
     <div class="totals-item totals-item-total">
       <label>Grand Total</label>

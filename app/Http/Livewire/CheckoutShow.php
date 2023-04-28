@@ -74,7 +74,6 @@ class CheckoutShow extends Component
             
         }
         
-        $this->totalProductAmount += 50 ;
         return $this->totalProductAmount;
     }
     
