@@ -57,7 +57,7 @@ class CheckoutShow extends Component
 
                 Cart::where('user_id',auth()->user()->id)->delete();
 
-                DiscordAlert::message("New Order Has Been Placed  $codOrder");
+                DiscordAlert::message("New Order Has Been Placed ");
 
                return redirect()->route('showcart')->with('success', 'Your Order Placed successfully!');
                 

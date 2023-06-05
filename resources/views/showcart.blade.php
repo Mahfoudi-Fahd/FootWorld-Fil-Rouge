@@ -69,13 +69,12 @@
         $total = 0;
         $tax = 0; 
     @endphp
-
   @foreach($carts as $cart)
-    @php
+  @php
         $subtotal += $cart->item->price*$cart->quantity;
         $tax = $subtotal* $taxRate;
         $total =  ($subtotal + $tax) ;
-    @endphp
+        @endphp
     <div class="product border-bottom pb-4 d-flex card-body bg-transparent">
       <div class="product-image">
         <img src="{{ asset('/storage/'.$cart->item->image)}}">
